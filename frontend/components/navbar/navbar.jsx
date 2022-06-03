@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
-import { FaUserCircle } from 'react-icons/fa';
+import Avatar from '@mui/material/Avatar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -10,7 +9,7 @@ class NavBar extends React.Component {
     
     render() {
         const {currentUser} = this.props;
-        let userImag =  <FaUserCircle />
+        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}/>
    
         return (
             <div className='navbar'>
