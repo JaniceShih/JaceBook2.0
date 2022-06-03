@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// import Avatar from '@mui/material/Avatar';
+import Avatar from '@mui/material/Avatar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class NavBar extends React.Component {
     
     render() {
         const {currentUser} = this.props;
-        let userImag = "";
+        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}/>
    
         return (
             <div className='navbar'>
