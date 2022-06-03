@@ -26,3 +26,5 @@
 
  @import url("./base/modal.scss"); 
  @import url("./base/signup.scss");
+
+ @import url("./base/navbar.scss");
