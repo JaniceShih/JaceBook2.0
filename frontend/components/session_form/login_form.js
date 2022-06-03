@@ -55,9 +55,9 @@ class LoginForm extends React.Component {
 
                 <div className="login-box">
                     <div>
-                        <input type="text" class="input__field login" name="email" id="email" data-testid="royal_email" placeholder="Email or phone number" autofocus="1" aria-label="Email or phone number"  value={this.state.email}  onChange={this.handleInput("email")} />
+                        <input type="text" className="input__field login" name="email" id="email" data-testid="royal_email" placeholder="Email or phone number" autoFocus="1" aria-label="Email or phone number"  value={this.state.email}  onChange={this.handleInput("email")} />
 
-                        <input type="password" class="input__field login" name="password" id="password" data-testid="royal_passwordl" placeholder="Password" autofocus="2" aria-label="Password"  value={this.state.password} onChange={this.handleInput("password")} />
+                        <input type="password" className="input__field login" name="password" id="password" data-testid="royal_passwordl" placeholder="Password" autoFocus="2" aria-label="Password"  value={this.state.password} onChange={this.handleInput("password")} />
 
                         
                     </div>

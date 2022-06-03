@@ -23,3 +23,6 @@
  @import url("./base/btn.scss");
 
  @import url("./base/login.scss");
+
+ @import url("./base/modal.scss"); 
+ @import url("./base/signup.scss");
