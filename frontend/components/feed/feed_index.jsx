@@ -1,9 +1,11 @@
 import React from "react";
 
+import NavBarContainer from "../navbar/navbar_container";
+
 const FeedIndex = () => {
     return (
         <>
-         <h1> New Feed</h1>
+          <NavBarContainer />
         </>
     )
 }

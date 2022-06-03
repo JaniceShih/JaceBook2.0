@@ -4,7 +4,6 @@
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-
 }
 
 .splash-intro{
@@ -15,12 +14,11 @@
     border: 1.5px solid white;
     background-color: white;
     box-shadow: 0 0 7px #cfcfcf, 0 0 10px #eeeeee, 0 0 21px #fff;
-    height: 350px;
+    height: 359px;
     width: 400px;
     border-radius: 10px;
     padding: 2px;
 }
-
 
 .splash-intro h1 {
     font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
@@ -42,8 +40,8 @@
 }
 
 .login__demo{
-    margin: 10px;
-    padding-bottom: 18px;
+    margin: 9px;
+    padding-bottom: 15px;
     text-align: center;
     border-bottom: 1px solid lightgray;
     color: var(--color-primary);
@@ -83,7 +81,7 @@
 }
 
 .btn--create{
-    margin: 10px 10px;
+    margin: 15px 10px;
     padding: 0 16px;
     font-size: 17px;
     line-height: 48px;
@@ -91,6 +89,12 @@
     border-radius: 6px;
     text-transform: none;
 
+}
+
+.loginError{
+    padding-left: 16px;
+    color: red;
+    font-size: 1.2rem;
 }
 
 @media screen and (min-width: 900px) and (min-width: 900px){
