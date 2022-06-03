@@ -14,7 +14,12 @@
  *= require_self
  */
 
+ 
  @import url("./base/reset.scss");
  @import url("./base/styles.scss");
+
+
+ @import url("./base/input.scss");
+ @import url("./base/btn.scss");
 
  @import url("./base/login.scss");

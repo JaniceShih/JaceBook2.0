@@ -2,13 +2,13 @@
     --color-backgroud: #eff2f5;
   
     --color-body: #1c1e21;
-    --color-body-darker: #606770;
+    --color-body-darker: #74787e;
   
     --color-primary: #1877f2;
     --color-secondary: #42b72a;
     --color-gray: #b0b1b1;
   
-    --color-border: #ccc;
+    --color-border: #ccd0d5;
     --border-radius: 30px;
   
     --color-headings: #1b0760;   
@@ -19,6 +19,10 @@
 *::before {
     box-sizing: border-box;
 }
+
+::placeholder {
+    color: var(--color-body-darker);
+  }
   
 html {
     font-size: 62.5%;    
