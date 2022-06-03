@@ -27,6 +27,9 @@ class SignupFrom extends React.Component {
         };
     };
     
+    componentWillUnmount() {
+        this.props.resetErrors();
+    }
 
     render(){ 
         const errors = this.props.errors;      
@@ -49,6 +52,9 @@ class SignupFrom extends React.Component {
                             onChange={this.handleInput("fname")}   
                         />
                     </label>
+                    <p className="fnameError" style={errors.includes("Fname can't be blank") ? ({ display: "" }) : ({ display: "none" })}>
+                        First name can't be blank!
+                    </p>
 
                     <label>
                         <input 
@@ -59,6 +65,9 @@ class SignupFrom extends React.Component {
                             onChange={this.handleInput("lname")}    
                         />
                     </label>
+                    <p className="lnameError" style={errors.includes("Lname can't be blank") ? ({ display: "" }) : ({ display: "none" })}>
+                        Last name can't be blank!
+                    </p>
                     
                     <label>
                         <input 
@@ -69,6 +78,9 @@ class SignupFrom extends React.Component {
                             onChange={this.handleInput("email")}     
                         />
                     </label>
+                    <p className="emailError" style={errors.includes("Email can't be blank") || errors.includes("Email is invalid") ? ({ display: "" }) : ({ display: "none" })}>
+                        Email can't be blank or Email is invalid!
+                    </p>
 
                     <label>
                         <input 
@@ -79,6 +91,9 @@ class SignupFrom extends React.Component {
                             onChange={this.handleInput("password")}    
                         />
                     </label>
+                    <p className="passwordError" style={errors.includes("Password is too short (minimum is 6 characters)") ? ({ display: "" }) : ({ display: "none" })}>
+                        Password is too short! (minimum is 6 characters)
+                    </p>
 
                     <div className="signup__term">
                         People who use our service may have uploaded your contact information to Facebook. Learn more.

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SignupFrom from "./signup_form";
-import { signup } from "../../actions/session_actions";
+import { signup, resetErrors } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 const mstp = (state) => {
@@ -13,6 +13,7 @@ const mstp = (state) => {
 const mdtp = (dispatch) => {
     return {
         signup: (formUser) => dispatch(signup(formUser)),
+         resetErrors: () => dispatch(resetErrors()),
         closeModal: () => dispatch(closeModal())
     };
 };

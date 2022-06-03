@@ -90,3 +90,30 @@
     box-shadow: inset 0 1px 1px #a4e388;
     border-color: #3b6e22 #3b6e22 #2c5115;
 }
+
+.fnameError, .lnameError, .emailError, .passwordError{
+    position: absolute;
+    color: red;
+    font-size: 1.2rem;
+}
+
+.fnameError {
+    top: 145px;
+    left: 20px;
+}
+
+.lnameError {
+    top: 145px;
+    left: 230px;
+}
+
+.emailError {
+    top: 210px;
+    left: 20px;
+}
+
+.passwordError {
+    top: 280px;
+    left: 20px;
+}
+
