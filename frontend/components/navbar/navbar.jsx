@@ -9,7 +9,7 @@ class NavBar extends React.Component {
     
     render() {
         const {currentUser} = this.props;
-        let userImag =  <Avatar/>
+        let userImag =  "";
    
         return (
             <div className='navbar'>
