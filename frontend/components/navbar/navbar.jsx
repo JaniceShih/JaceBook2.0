@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                 <div  className='navbar__right'>
                     <div className="navbar__info">
                         <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg"><Avatar /></div>
+                                <div className="navbar__info--userimg"></div>
                                 <div className="navbar__info--username">{currentUser.fname}</div>                                
                             </div>
                      
