@@ -4,6 +4,8 @@ import { MdSearch} from "react-icons/md";
 import { FaUserCircle } from 'react-icons/fa';
 import { AiFillHome } from "react-icons/ai";
 import { MdStorefront } from "react-icons/md";
+import { FaChartArea } from 'react-icons/fa';
+
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { VscGithub } from "react-icons/vsc";
 import { FaUserFriends } from 'react-icons/fa';
@@ -33,10 +35,9 @@ class NavBar extends React.Component {
                         </Link>
                     </div>
 
-                    <div className='navbar__input'>
-                        
+                    <div className='navbar__input'>                        
                         <MdSearch color="#74787e" fontSize="2rem"/>
-                        <input type="text" placeholder='Search JaceBook' title='In Construction.' disabled/>
+                        <input type="text" placeholder='Search JaceBook'/>
                     </div>
                    
                 </div>
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
                         <AiFillHome color="#1877f2" fontSize="3rem" />
                     </div>
                     <div className='navbar__option'> 
-                        <MdStorefront  color="#74787e" fontSize="2.6rem"/>
+                        <FaChartArea  color="#74787e" fontSize="2.6rem"/>
                     </div> 
                     <div className='navbar__option'> 
                         <AiOutlineLinkedin  color="#74787e" fontSize="2.8rem"/>
@@ -67,40 +68,33 @@ class NavBar extends React.Component {
                                 <div className="navbar__info--userimg"><FaUserCircle fontSize="3rem" /></div>
                                 <div className="navbar__info--username">{currentUser.fname}</div>                                
                         </div>
+          
+                        <div className="avatar avatar--medium">
+                            <CgMenuGridO color="black" fontSize="2rem" />
+                        </div> 
 
-                        <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg">
-                                    <CgMenuGridO color="black" fontSize="2.5rem" />
-                                </div>
-                                                             
-                        </div>
+                
+                        <div className="avatar avatar--medium">
+                            <FaFacebookMessenger color="black" fontSize="2rem" />
+                        </div> 
 
-                        <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg">
-                                    <FaFacebookMessenger color="black" fontSize="2rem" />
-                                </div>
-                                                             
-                        </div>
 
-                        <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg">
-                                    <MdNotifications color="black" fontSize="2.5rem" />
-                                </div>
-                                                             
-                        </div>
 
-                        <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg">
-                                    <AiFillCaretDown color="black" fontSize="2rem" />
-                                </div>
-                                                             
-                        </div>
+                        <div className="avatar avatar--medium">
+                            <MdNotifications color="black" fontSize="2rem" />
+                        </div> 
+
+              
+                        <div className="avatar avatar--medium">
+                            <AiFillCaretDown color="black" fontSize="2rem" />
+                        </div>                                                        
+                        
                      
-                        <div onClick={this.props.logout}>
+                        {/* <div onClick={this.props.logout}>
                                <p>
                                  Logout
                                 </p>                                   
-                        </div>                           
+                        </div>                            */}
                       
                     </div>
                 </div>

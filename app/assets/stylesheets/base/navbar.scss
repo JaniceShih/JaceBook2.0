@@ -11,8 +11,17 @@
 
 .navbar__left{
     display: flex;
-    // justify-content: space-evenly;
 }
+
+.navbar__center{
+    display: none;
+    justify-content: center;
+}
+
+.navbar__right{
+    display: none;
+}
+
 
 .navbar__input{
     display: flex;
@@ -20,13 +29,16 @@
     background-color: #eff2f5;
     padding: 10px;
     margin-left: 10px;
-    border-radius: 999px;
+    border-radius: 200px;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .navbar__logo{
     width: 40px;
     min-height: 40px;
 }
+
 
 .navbar__info--user{
     display: flex;
@@ -47,10 +59,16 @@
 }
 
 .avatar{
+    background: #eff2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
     border-radius: 50%;
     width: 178px;
     height: 178px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .avatar--small{
@@ -59,8 +77,12 @@
 }
 
 .avatar--medium{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+}
+
+.avatar:hover{
+    background: #e5e8ed;
 }
 
 .navbar__info--user:hover{
@@ -75,32 +97,13 @@
     outline-width: 0;
 }
 
-.navbar__center{
-    display: none;
-    // flex: 1;
-    justify-content: center;
-}
-
-.navbar__option > .MuiSvgIcon-root{
-    font-size: xx-large;
-    color: gray;
-}
-
-.navbar__option > a > .MuiSvgIcon-root{
-    font-size: xx-large;
-    color: gray;
-}
-
-
-.navbar__option:hover > .MuiSvgIcon-root{
-    color: #2e81f4;
-}
 
 .navbar__option--active{
     border-bottom: 4px solid #2e81f4;
 }
 
 .navbar__option{
+    width: 111px;
     display: flex;
     align-items: center;
     padding: 0 38px;
@@ -111,7 +114,7 @@
     background-color: #eff2f5;
     border-radius: 10px;
     align-items: center;
-    padding: 0 30px;
+    // padding: 0 30px;
     border-bottom: none;
 }
 
@@ -163,10 +166,6 @@
 }
 
 
-
-.navbar__right{
-    display: none;
-}
 
 @media screen and (min-width: 900px) {
     .navbar__center {

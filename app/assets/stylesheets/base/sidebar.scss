@@ -1,0 +1,38 @@
+/* sidebar */
+.sidebar{
+    display: none;
+    padding: 25px 10px;
+    flex: 0.33;
+    position: fixed;
+}
+
+
+.sidebarrow{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebarrow:hover{
+    background-color: #e8e9ea;
+    border-radius: 10px;
+}
+
+.sidebarrow > h4{
+    margin-left: 20px;
+    font-weight: 00;
+    font-size: 1.5rem;
+}
+
+.sidebarrow > a{
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1050px) {
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+    }
+}
