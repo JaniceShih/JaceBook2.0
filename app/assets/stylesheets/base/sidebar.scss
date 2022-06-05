@@ -1,9 +1,15 @@
 
 .sidebar{
-    display: none;
+    
     padding: 25px 10px;
-    flex: 0.33;
+    width: 100%;
     position: fixed;
+}
+
+.app >.sidebar{
+    display: none;
+    width: auto;
+    flex: 0.33;
 }
 
 
@@ -31,7 +37,7 @@
 }
 
 @media screen and (min-width: 1050px) {
-    .sidebar {
+    .app > .sidebar {
       display: flex;
       flex-direction: column;
     }

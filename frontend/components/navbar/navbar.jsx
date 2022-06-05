@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { MdSearch} from "react-icons/md";
 import { FaUserCircle } from 'react-icons/fa';
 import { AiFillHome } from "react-icons/ai";
@@ -16,6 +16,7 @@ import { CgMenuGridO } from "react-icons/cg";
 import { IoLogOut } from "react-icons/io5";
 
 import { CgMenu } from "react-icons/cg";
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 
@@ -27,7 +28,8 @@ class NavBar extends React.Component {
             dropdown: 'nav__menu--none',
             avatar: '',
             icons: 'black'
-        }       
+        }    
+        this.redirectPage = this.redirectPage.bind(this);   
     }
 
     handleClick() {
@@ -36,14 +38,22 @@ class NavBar extends React.Component {
             (this.state.dropdown === 'nav__menu--none') ? this.setState({dropdown: '',avatar: 'avatar--active', icons: '#1877f2'}) : this.setState({dropdown: 'nav__menu--none',avatar: '', icons: 'black'});
         };
     };
+
+    
+    redirectPage(){         
+        this.props.history.push({pathname: '/bookmarks'});
+    }
     
     render() {
+        console.log( this.props.url);
+
         const {currentUser} = this.props;
         let userImag =  "";
 
         let nav__menu = this.state.dropdown;
         let avatar = this.state.avatar;
         let icons = this.state.icons;
+
 
         return (
             <div className='navbar'>
@@ -59,7 +69,7 @@ class NavBar extends React.Component {
                         <input type="text" placeholder='Search JaceBook' className='navbar__search'/>
                        
                     </div>
-                    <div className='navbar--bookmark--small'>
+                    <div className='navbar--bookmark--small' onClick={()=>this.redirectPage()}>
                         <CgMenu  color="#74787e" fontSize="3rem" />
                     </div>
                     
@@ -83,7 +93,8 @@ class NavBar extends React.Component {
                         <FaUserFriends  color="#74787e" fontSize="2.8rem"/>
                     </div> 
 
-                    <div className='navbar__option navbar--bookmark'> 
+                    <div className='navbar__option navbar--bookmark' onClick={()=>this.redirectPage()}> 
+                        {/* <Link to='/bookmarks'><CgMenu  color="#74787e" fontSize="3rem"/></Link> */}
                         <CgMenu  color="#74787e" fontSize="3rem"/>
                     </div> 
                    
