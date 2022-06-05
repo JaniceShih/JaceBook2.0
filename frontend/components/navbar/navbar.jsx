@@ -15,6 +15,8 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import { IoLogOut } from "react-icons/io5";
 
+import { CgMenu } from "react-icons/cg";
+
 
 
 
@@ -54,9 +56,13 @@ class NavBar extends React.Component {
 
                     <div className='navbar__input'>                        
                         <MdSearch color="#74787e" fontSize="2rem"/>
-                        <input type="text" placeholder='Search JaceBook'/>
+                        <input type="text" placeholder='Search JaceBook' className='navbar__search'/>
+                       
                     </div>
-                   
+                    <div className='navbar--bookmark--small'>
+                        <CgMenu  color="#74787e" fontSize="3rem" />
+                    </div>
+                    
                 </div>
                 
                 <div  className='navbar__center'>                   
@@ -76,8 +82,14 @@ class NavBar extends React.Component {
                     <div className='navbar__option navbar--friends'> 
                         <FaUserFriends  color="#74787e" fontSize="2.8rem"/>
                     </div> 
+
+                    <div className='navbar__option navbar--bookmark'> 
+                        <CgMenu  color="#74787e" fontSize="3rem"/>
+                    </div> 
                    
                 </div>
+                
+                   
 
                 <div  className='navbar__right'>
                     <div className="navbar__info">
