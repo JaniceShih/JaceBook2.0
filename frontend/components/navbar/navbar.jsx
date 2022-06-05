@@ -13,19 +13,36 @@ import { FaFacebookMessenger } from 'react-icons/fa';
 import { MdNotifications } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
+import { IoLogOut } from "react-icons/io5";
 
 
 
 
 class NavBar extends React.Component {
     constructor(props) {
-        super(props);        
+        super(props); 
+        this.state = {
+            dropdown: 'nav__menu--none',
+            avatar: '',
+            icons: 'black'
+        }       
     }
+
+    handleClick() {
+        return (e) => {
+           
+            (this.state.dropdown === 'nav__menu--none') ? this.setState({dropdown: '',avatar: 'avatar--active', icons: '#1877f2'}) : this.setState({dropdown: 'nav__menu--none',avatar: '', icons: 'black'});
+        };
+    };
     
     render() {
         const {currentUser} = this.props;
         let userImag =  "";
-   
+
+        let nav__menu = this.state.dropdown;
+        let avatar = this.state.avatar;
+        let icons = this.state.icons;
+
         return (
             <div className='navbar'>
                 <div  className='navbar__left'>
@@ -56,7 +73,7 @@ class NavBar extends React.Component {
                         <VscGithub  color="#74787e" fontSize="2.8rem"/>
                     </div> 
                  
-                    <div className='navbar__option'> 
+                    <div className='navbar__option navbar--friends'> 
                         <FaUserFriends  color="#74787e" fontSize="2.8rem"/>
                     </div> 
                    
@@ -80,22 +97,43 @@ class NavBar extends React.Component {
 
 
 
-                        <div className="avatar avatar--medium">
-                            <MdNotifications color="black" fontSize="2rem" />
+                        <div className={`avatar avatar--medium`}>
+                            <MdNotifications color="black" fontSize="2rem"/>
                         </div> 
 
               
-                        <div className="avatar avatar--medium">
-                            <AiFillCaretDown color="black" fontSize="2rem" />
-                        </div>                                                        
+                        <div className={`avatar avatar--medium nav_dropdown ${avatar}`}>
+                            <AiFillCaretDown color={icons} fontSize="1.5rem" onClick={this.handleClick()} />
+
+                            <div className={`nav__menu ${nav__menu}`}>
+                                <div className='nav__menu--option'>
+                                
+                                    <div className="navbar__info--userimg"><FaUserCircle fontSize="5rem" /></div>
+                                    <div className="navbar__info--username">
+                                        <p>
+                                            {currentUser.fname} {currentUser.lname}
+                                        </p>
+                                        <p className='navbar__info--profile'>
+                                           See your profile
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <hr className='navbar__info-hr'></hr>
+                                <div className='nav__menu--option' onClick={this.props.logout}>
+                                    <div className='avatar avatar--medium'>
+                                        <IoLogOut color="black" fontSize="2.5rem" />
+                                    </div>
+                                    <div className='nav__menu--title'>
+                                        Log Out
+                                    </div>       
+                                </div> 
+                           </div>
+                        </div>
+
                         
-                     
-                        {/* <div onClick={this.props.logout}>
-                               <p>
-                                 Logout
-                                </p>                                   
-                        </div>                            */}
-                      
+
                     </div>
                 </div>
             </div>

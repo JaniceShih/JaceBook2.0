@@ -43,7 +43,7 @@
 
 
 .navbar__info--user{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin-right: 1px;
@@ -55,13 +55,14 @@
 }
 
 .navbar__info--username{
-    font-size: medium;
+    font-size: 1.5rem;
     font-weight: 600;
     color: black;
+    text-transform: capitalize;
 }
 
 .avatar{
-    background: #eff2f5;
+    background: #E4E6EB;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +82,11 @@
 .avatar--medium{
     width: 35px;
     height: 35px;
+}
+
+.avatar--large{
+    width: 40px;
+    height: 40px;
 }
 
 .avatar:hover{
@@ -105,11 +111,11 @@
 }
 
 .navbar__option{
-    width: 111px;
+    display:inline-block;
     height: 56px;
     display: flex;
     align-items: center;
-    padding: 0 38px 0 38px;
+    padding: 0 25px;
     cursor: pointer;
 }
 
@@ -119,6 +125,10 @@
     align-items: center;
     // padding: 0 30px;
     border-bottom: none;
+}
+
+.navbar--friends{
+    display: none;
 }
 
 .navbar__info{
@@ -153,27 +163,102 @@
     display: block;
 }
 
-.navbar__info--menu{
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    // border-radius: 5px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 5px;
-    top: 35px;
-    right: 5px;
-    z-index: 1;
 
-    cursor: pointer;
+.nav_dropdown{
+    position: relative;;
 }
 
+.nav__menu{
+    position: absolute;
+    // display: none;
+    top: 35px;
+    right: -10px;
+    background-color: white;
+    min-width: 360px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px 5px;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--color-body-darker);
+    
+
+}
+
+.nav__menu--none{
+    display: none;
+}
+
+.nav__menu--option{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;    
+    // margin: 3px 0;
+}
+
+.nav__menu--option:hover{
+    background: #f0f1f2;
+    border-radius: 6px;
+}
+
+.navbar__info--profile{
+    color: #aaacaf;
+    font-weight: 200;
+    margin-top: 3px;
+    
+}
+
+.navbar__info-hr{
+    color: var(--color-border);
+    margin: 8px 5px;
+}
+
+.nav__menu--title{
+    color: black;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.avatar--active{
+    background: #d6e6fd;
+}
+
+
+
+
+@media screen and (min-width: 1160px) {
+     .navbar__option{
+        width: 111px;
+        padding: 0 38px;
+    }
+
+    .navbar__info--user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1px;
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .navbar__option{
+        width: 100px;
+        padding: 0 25px;
+    }
+
+    .navbar--friends{
+        display: flex;
+    }    
+
+}
 
 
 @media screen and (min-width: 900px) {
     .navbar__center {
       display: flex;
-    }
+    }   
 }
 
 @media screen and (min-width: 450px) {
