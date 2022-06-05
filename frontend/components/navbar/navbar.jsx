@@ -102,8 +102,11 @@ class NavBar extends React.Component {
                         </div> 
 
               
-                        <div className={`avatar avatar--medium nav_dropdown ${avatar}`}>
-                            <AiFillCaretDown color={icons} fontSize="1.5rem" onClick={this.handleClick()} />
+                        <div className={`nav_dropdown`}>
+                            <div onClick={this.handleClick()} className={`avatar avatar--medium  ${avatar}`}>
+                                <AiFillCaretDown color={icons} fontSize="1.8rem"  />
+                            </div>
+                           
 
                             <div className={`nav__menu ${nav__menu}`}>
                                 <div className='nav__menu--option'>

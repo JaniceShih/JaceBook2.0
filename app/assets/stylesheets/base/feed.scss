@@ -13,3 +13,103 @@
     
 }
 
+/* Feed */
+.feed{
+    // min-width: 600px;
+    flex: 1;
+    padding: 30px ;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    // width: 100%;
+}
+
+.friendslist{
+    display: none;
+    padding: 15px 10px;
+    flex: 0.4;
+    position: fixed;
+    right: 0;
+    
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .friendslist {
+        display: flex;
+        flex: 0.33;
+        flex-direction: column;
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .friendslist {
+      
+      width: 380px;
+    }
+}
+
+
+.ads{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.ads > h3{
+    padding-left: 5px;
+    color: #87888b;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.ad{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ad:hover{
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+
+.ad__img > img{
+    width: 99.2px;
+    height: 99.2px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.ad__info{
+    color: rgb(111, 110, 110);
+    margin-right: 20px;
+}
+
+
+.ad__info > h3{
+    font-size: small;
+    font-weight: 600;
+    color: black;
+}
+
+.ad__info > a{
+    font-size: small;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1300px) {
+    .ad__img > img{
+        width: 120px;
+        height: 120px;
+    }
+}
