@@ -4,6 +4,7 @@ import NavBarContainer from "../navbar/navbar_container";
 import SidebarContainer from './../sidebar/sidebar_container'
 import FriendsContainer from  './../friends/friends_container'
 import StoryReel from '../feed/storyreel'
+import PostIndexContainer from "../posts/posts_index_container"
 
 const FeedIndex = () => {
     return (
@@ -12,7 +13,8 @@ const FeedIndex = () => {
           <div className="app app__body">
                 <SidebarContainer />  
                 <div className='feed'> 
-                    <StoryReel />               
+                    <StoryReel /> 
+                    <PostIndexContainer />              
                 </div>
                 <FriendsContainer />              
           </div> 

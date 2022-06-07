@@ -1,5 +1,3 @@
-@import url("./sidebar.scss");
-
 /* App */
 .app{
     background-color: #f1f2f5;
@@ -13,14 +11,59 @@
     
 }
 
+
+.sidebar{
+    
+    padding: 25px 10px;
+    width: 100%;
+    position: fixed;
+}
+
+.app >.sidebar{
+    display: none;
+    width: auto;
+    flex: 0.33;
+}
+
+
+.sidebarrow{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebarrow:hover{
+    background-color: #e8e9ea;
+    border-radius: 10px;
+}
+
+.sidebarrow > h4{
+    margin-left: 20px;
+    font-weight: 00;
+    font-size: 1.5rem;
+}
+
+.sidebarrow > a{
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1150px) {
+    .app > .sidebar {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
 /* Feed */
 .feed{
-    flex: 0.66;
-    padding: 30px ;
-  
+    flex: 0.65;
+    padding: 100px 1% 0 3%;  
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
+    justify-content: flex-start;
     align-items: flex-start;
    
 }
