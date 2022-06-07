@@ -28,7 +28,7 @@ class PostIndex extends React.Component{
            <>
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                       <FaUserCircle fontSize="4rem" />
+                       <FaUserCircle fontSize="4rem"  color='gray'/>
                         
                         <div                        
                             key="openCreatePostModal"
@@ -39,11 +39,11 @@ class PostIndex extends React.Component{
 
                     <div className='messagesender__bottom'>                    
                         <div className='messagesender__option' >
-                             <MdPhotoLibrary fontSize="2.66rem" color='green'/>
+                             <MdPhotoLibrary fontSize="2.5rem" color='green'/>
                             <h3>Photo/Video</h3>
                         </div>
                         <div className='messagesender__option'>
-                            <GoSmiley fontSize="2.66rem" color='orange'/>
+                            <GoSmiley fontSize="2.5rem" color='orange'/>
                             <h3>Feeling/Activity</h3>
                         </div>
                     </div>
