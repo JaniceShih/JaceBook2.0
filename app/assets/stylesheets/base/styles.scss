@@ -2,12 +2,14 @@
     --color-backgroud: #eff2f5;
   
     --color-body: #1c1e21;
-    --color-body-darker: #87888b;
+    --color-body-darker: #747577;
     --color-body-lighter: #aaacaf;
   
     --color-primary: #1877f2;
     --color-secondary: #42b72a;
     --color-gray: #b0b1b1;
+
+    --color-href: #196ddc;
   
     --color-border: #ccd0d5;
     --border-radius: 30px;
@@ -68,6 +70,11 @@ p {
     margin-top: 0;
 }
 
+a{
+    cursor: pointer;
+    color: var(--color-href);
+}
+
 @media screen and (min-width: 900px) {
     body {
         font-size: 1.8rem;
@@ -84,4 +91,31 @@ p {
     h3 {
         font-size: 2.4rem;
     } 
+}
+
+.notfound{
+    margin: 0 auto;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 452px;
+}
+
+.notfound > h1{
+    font-size: 2rem;
+    color: #65676B;
+    font-weight: 600;
+}
+
+.notfound > p{
+    font-size: 1.7rem;
+    color: var(--color-body-darker);
+    text-align: center;
+}
+
+.notfound-img{
+    width: 112px;
+    height: 112px   ;
 }

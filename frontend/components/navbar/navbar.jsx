@@ -33,8 +33,7 @@ class NavBar extends React.Component {
     }
 
     handleClick() {
-        return (e) => {
-           
+        return (e) => {           
             (this.state.dropdown === 'nav__menu--none') ? this.setState({dropdown: '',avatar: 'avatar--active', icons: '#1877f2'}) : this.setState({dropdown: 'nav__menu--none',avatar: '', icons: 'black'});
         };
     };

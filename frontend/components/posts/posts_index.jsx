@@ -26,23 +26,23 @@ class PostIndex extends React.Component{
 
         return(            
            <>
-                <div className='messagesender' >
-                    <div className='messagesender__top' >
+                <div className='post' >
+                    <div className='post__top' >
                        <FaUserCircle fontSize="4rem"  color='gray'/>
                         
                         <div                        
                             key="openCreatePostModal"
-                            className='messagesender__input'>
+                            className='post__input'>
                             What's on your mind? {currentUser.fname}
                         </div>          
                     </div>     
 
-                    <div className='messagesender__bottom'>                    
-                        <div className='messagesender__option' >
+                    <div className='post__bottom'>                    
+                        <div className='post__option' >
                              <MdPhotoLibrary fontSize="2.5rem" color='green'/>
                             <h3>Photo/Video</h3>
                         </div>
-                        <div className='messagesender__option'>
+                        <div className='post__option'>
                             <GoSmiley fontSize="2.5rem" color='orange'/>
                             <h3>Feeling/Activity</h3>
                         </div>
