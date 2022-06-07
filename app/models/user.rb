@@ -4,6 +4,12 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true
 
     after_initialize :ensure_session_token
+
+    has_one_attached :photo
+
+    has_many :posts,
+        foreign_key: :user_id,
+        class_name: :Post
     
     def self.generate_session_token
         SecureRandom::urlsafe_base64
