@@ -15,14 +15,14 @@
 
 /* Feed */
 .feed{
-    // min-width: 600px;
-    flex: 1;
+    flex: 0.66;
     padding: 30px ;
+  
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    // width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+   
 }
 
 .friendslist{
@@ -36,18 +36,28 @@
 
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 950px) {
     .friendslist {
         display: flex;
         flex: 0.33;
         flex-direction: column;
         width: 280px;
     }
+   
 }
 
-@media screen and (min-width: 1300px) {
-    .friendslist {
-      
+@media screen and (min-width: 1150px) {
+    .feed{ 
+        flex: 0.95;
+        width: 732px;
+        align-items: center;
+    }
+   
+}
+
+
+@media screen and (min-width: 1350px) {
+    .friendslist {      
       width: 380px;
     }
 }
@@ -112,4 +122,56 @@
         width: 120px;
         height: 120px;
     }
+}
+
+
+
+/* story*/
+.story{
+    // width: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 200px;
+    box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+}
+
+.story:hover{
+    transform: scale(1.1);
+}
+
+.story__avatar{
+    margin: 10px;
+    border: 5px solid #2e81f4;
+
+}
+
+
+.story__avatar--white{
+    border: 5px solid white;
+
+}
+
+
+.story > h4{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.storyreel{
+    
+    display: flex;
+    // flex:1;
+    width: 100%;
+    justify-content: center;
 }
