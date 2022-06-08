@@ -58,7 +58,7 @@
 }
 
 .form__post{
-    padding: 16px 16px 5px;
+    padding: 10px 15px 5px;
 }
 
 .form__file{
@@ -184,4 +184,53 @@
     background: #eff0f0;
 }
 
-  
+.form__header--delete{
+    color: black;
+    font-size: 2rem;  
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.from__submit{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;  
+}
+
+.from__submit__delete > button{
+    margin-right: 10px;
+    text-align: center;
+    padding: 0 25px;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.from__submit__delete--cancel{
+    background-color: white;
+    color: #2e81f4;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    text-transform: capitalize;
+}
+
+.from__submit__delete--cancel:hover{
+    background: #eff0f0;
+    border-radius: 6px;
+}
+
+.from__submit__delete{
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-transform: capitalize;
+}
+
+.form__content{
+    font-size: 1.5rem;
+    color: var(--color-text);
+} 

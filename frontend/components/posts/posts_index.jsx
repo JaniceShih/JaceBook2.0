@@ -28,7 +28,7 @@ class PostIndex extends React.Component{
     }
 
     render(){   
-        const {currentUser, posts, userId} = this.props;   
+        const {currentUser, posts, userId, openModal} = this.props;   
         return(            
            <>
                 <div className='messagesender' >
@@ -61,7 +61,8 @@ class PostIndex extends React.Component{
                     Object.values(posts).reverse().map(                      
                         (post,idx)=>                         
                         <PostIndexItem 
-                            post={post}                         
+                            post={post} 
+                            openModal ={openModal}                        
                             currentUser={currentUser}                      
                             userId={userId}
                             key ={idx}

@@ -1,6 +1,10 @@
 import React from 'react'
 
 import { FaUserCircle } from 'react-icons/fa';
+import { MdOutlineMoreHoriz } from 'react-icons/md';
+import { MdOutlineModeEditOutline } from 'react-icons/md';
+import { IoTrashOutline } from "react-icons/io5";
+
 
 class PostIndexItem extends React.Component{
   constructor(props){
@@ -8,8 +12,14 @@ class PostIndexItem extends React.Component{
     this.state = {
       body: ''
     }
+    this.openDeletePostModal = this.openDeletePostModal.bind(this);
 
   }
+
+  openDeletePostModal(e) {
+    e.preventDefault();
+    this.props.openModal({ type: 'delete_post', post: this.props.post });
+ } 
 
   render(){
       const {currentUser, post, userId} = this.props; 
@@ -21,7 +31,7 @@ class PostIndexItem extends React.Component{
       let post__menu = '';
 
       if(post.user_id === currentUser.id){
-        post__menu = <p className="post__menu">...</p>;
+        post__menu = <p className="post__menu"><MdOutlineMoreHoriz fontSize="2.5rem" /> </p>;
       }
       
 
@@ -39,6 +49,20 @@ class PostIndexItem extends React.Component{
             <div className="post__top__right">
 
                 {post__menu}
+
+                <div className="post__top__right--menu">
+                  <div className="post__option"
+                      >
+                    <MdOutlineModeEditOutline fontSize="2.5rem" />
+                    <button  className="post__option-button"> Edit Post </button> 
+                  </div> 
+                  <div className="post__option" 
+                      onClick={this.openDeletePostModal}>
+                    <IoTrashOutline  fontSize="2.5rem" />
+                    <button className="post__option-button"> Delete Post </button> 
+                  </div>
+                
+                </div>      
                                 
             </div>
             

@@ -1,6 +1,7 @@
 import React from "react";
 import SignupContainer from "../session_form/signup_form_container";
 import CreatePostContainer from '../posts/create_post_container'
+import DeletePostContainer from '../posts/delete_post_container'
 
 const Modal = ({modal, closeModal}) => {
     if (!modal) {
@@ -14,6 +15,9 @@ const Modal = ({modal, closeModal}) => {
         case "create_post":
             component = <CreatePostContainer />
             break;
+        case "delete_post":
+            component = <DeletePostContainer post={modal.post} />
+                break;
         default:
             return null;
     };
