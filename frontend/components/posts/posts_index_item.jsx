@@ -13,8 +13,14 @@ class PostIndexItem extends React.Component{
       body: ''
     }
     this.openDeletePostModal = this.openDeletePostModal.bind(this);
+    this.openEditPostModal = this.openEditPostModal.bind(this);
 
   }
+
+  openEditPostModal(e){
+    e.preventDefault();
+    this.props.openModal({ type: 'edit_post', post: this.props.post });
+   }
 
   openDeletePostModal(e) {
     e.preventDefault();
@@ -52,7 +58,7 @@ class PostIndexItem extends React.Component{
 
                 <div className="post__top__right--menu">
                   <div className="post__option"
-                      >
+                  onClick={this.openEditPostModal}>
                     <MdOutlineModeEditOutline fontSize="2.5rem" />
                     <button  className="post__option-button"> Edit Post </button> 
                   </div> 

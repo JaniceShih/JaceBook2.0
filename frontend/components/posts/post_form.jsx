@@ -11,8 +11,8 @@ class PostForm extends React.Component {
       photoFile: null,
       photoUrl: this.props.post.photoUrl,
       user_id: this.props.post.user_id,
-      add_photo: 'add-photo',
-      photo_preview: 'displayNone'
+      add_photo: (this.props.formType =='Create post') ? 'add-photo' : 'displayNone',
+      photo_preview: (this.props.post.photoUrl) ? 'photo-preview' : 'displayNone',
     }
      this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -36,12 +36,12 @@ class PostForm extends React.Component {
         () => this.props.closeModal()
       )
     }else{
-      // formData.append('post[id]', this.props.post.id);
-      // this.props.updatePost(formData)
-      // .then(this.setState({ body: "" }))
-      // .then(
-      //   () => this.props.closeModal()
-      // )
+      formData.append('post[id]', this.props.post.id);
+      this.props.updatePost(formData)
+      .then(this.setState({ body: "" }))
+      .then(
+        () => this.props.closeModal()
+      )
     }
 
   }
@@ -82,7 +82,7 @@ class PostForm extends React.Component {
   }
   
   render() {   
-    
+    console.log(this.state.photoUrl);
     const preview = this.state.photoUrl ? 
         <>
           <div className={this.state.photo_preview}> 
@@ -149,7 +149,7 @@ class PostForm extends React.Component {
                 <button 
                     className="btn btn--primary btn--post" onClick={this.handleSubmit}
                     > 
-                      Post
+                      {(this.props.formType =='Create post') ? 'Post' : 'Save'}
                 </button>                 
               </div>
           </form>
