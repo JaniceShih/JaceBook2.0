@@ -47,13 +47,14 @@
     padding: 10px 5px;
     border-radius: 999px;
     cursor: pointer;
+   
 }
 
 .form__input > input{
     width: 100%;
     outline: 0px;
     font-size: 1.5rem;
-    color: #e0e5eb;
+    color: var(--color-body-darker);
 }
 
 .form__post{
@@ -77,7 +78,7 @@
     position: relative;
     align-items: center;
     justify-content: center; 
-    height: 183.5px;
+    height: 200px;
     border-radius: 5px; 
     font-size: 1.75rem;
     font-weight: 600;
@@ -102,3 +103,85 @@
     border-radius: 6px;
     text-transform: none;
  }
+
+ .custom-file-input {
+    position: absolute;
+    color: transparent;
+    cursor: pointer;
+    height: 200px;
+    width: 100%;
+}
+
+
+ .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.displayNone{
+    display: none;
+}
+
+.photo-preview{
+    position: relative;    
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(245, 245, 245, 0.7);
+    z-index: 10;
+    height: 200px;
+    width: 100%;
+}
+ 
+.photo-img{
+   position: absolute;
+   z-index: 9;
+   height: 200px;
+   width: 100%;
+   border-radius: 6px;
+   z-index: 9;
+   background: rgba(50, 70, 80, 0.7);
+   opacity: 0.9;
+   filter: brightness(90%);
+   object-fit: cover;
+}
+
+.photo-edit{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 1.35rem;
+    font-weight: 600;
+    width: auto;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.photo-edit:hover{
+    background: #eff0f0;
+}
+
+.photo-preview > .close-x {
+    position: absolute;
+    color: var(color-body-darker);
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    padding: 3px 10px;
+    font-size: 1.75rem;
+    font-weight: 400;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    z-index: 11;
+  }
+
+.photo-preview > .close-x:hover{
+    background: #eff0f0;
+}
+
+  

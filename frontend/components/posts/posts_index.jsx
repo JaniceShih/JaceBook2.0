@@ -7,6 +7,7 @@ import { GoSmiley } from "react-icons/go";
 
 
 
+
 class PostIndex extends React.Component{
     constructor(props){
         super(props);

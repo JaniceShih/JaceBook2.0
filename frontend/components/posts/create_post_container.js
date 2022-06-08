@@ -9,10 +9,10 @@ const mSTP = state =>({
         body: '',
         photoFile: null,
         photoUrl: null,
-        user_id: state.session.currentUser 
+        user_id: state.session.currentUser        
     },
     currentUser: state.entities.users[state.session.currentUser] ,
-    formType: 'Create post'    
+    formType: 'Create post'
 })
 
 const mDTP = dispatch =>({
