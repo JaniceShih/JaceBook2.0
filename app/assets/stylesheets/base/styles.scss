@@ -12,6 +12,7 @@
     --color-href: #196ddc;
   
     --color-border: #ccd0d5;
+    --color-background: #eff2f5;
     --border-radius: 30px;
   
     --color-headings: #1b0760;   
@@ -36,7 +37,7 @@ img {
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;  
     font-size: 1.3rem;
     line-height: 1.34;
     color: var(--color-body);
@@ -118,4 +119,11 @@ a{
 .notfound-img{
     width: 112px;
     height: 112px   ;
+}
+
+.user-name{
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: 1.5rem;
 }

@@ -29,7 +29,7 @@ class PostIndexItem extends React.Component{
         <div className='post'>
           <div className='post__top'>
             <div className='post__top--left'>
-               <FaUserCircle fontSize="3.5rem"  color='gray'/>
+               <FaUserCircle fontSize="3.8rem"  color='gray'/>
               <div className='post__topinfo'>
                 <h3>{post.fname + ' ' + post.lname}</h3>
                 <p>{post.updated_at.toString().split('T')[0]}</p>            

@@ -91,14 +91,19 @@
 }
 
 .post__topinfo > h3{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-transform: capitalize;
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom: 3px;
 }
 
+
 .post__topinfo > p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1;
     color: gray;
+   
 }
 .post__image{
     display: flex;
@@ -113,10 +118,10 @@
 }
 
 .post__bottom{
-    padding-left: 4rem ;
-    font-size: large;
+    padding-left: 2rem ;
+    font-size: 1.65rem;
     font-weight: 400;
     color: rgb(111, 110, 110);
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 10px;
 }

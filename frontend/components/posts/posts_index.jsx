@@ -10,7 +10,10 @@ import { GoSmiley } from "react-icons/go";
 class PostIndex extends React.Component{
     constructor(props){
         super(props);
-
+        this.state = {
+            posts: this.props.posts
+        }
+        this.openCreatePostModal = this.openCreatePostModal.bind(this);
     }
 
     componentDidMount(){
@@ -18,25 +21,29 @@ class PostIndex extends React.Component{
         // this.props.fetchComments();
     }
 
+    openCreatePostModal(e) {
+        e.preventDefault();
+        this.props.openModal({ type: 'create_post'});
+    }
+
     render(){   
-        const {currentUser, posts, userId} = this.props;      
-       
-
-
+        const {currentUser, posts, userId} = this.props;   
         return(            
            <>
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                       <FaUserCircle fontSize="3.5rem"  color='gray'/>
+                       <FaUserCircle fontSize="3.8rem"  color='gray'/>
                         
                         <div                        
                             key="openCreatePostModal"
-                            className='messagesender__input'>
+                            className='messagesender__input'
+                            onClick={this.openCreatePostModal}>
                             What's on your mind? {currentUser.fname}
                         </div>          
                     </div>     
 
-                    <div className='messagesender__bottom'>                    
+                    <div className='messagesender__bottom'
+                        onClick={this.openCreatePostModal}>                    
                         <div className='messagesender__option' >
                              <MdPhotoLibrary fontSize="2.5rem" color='green'/>
                             <h3>Photo/Video</h3>

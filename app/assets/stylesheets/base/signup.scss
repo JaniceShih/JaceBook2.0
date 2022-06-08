@@ -1,4 +1,4 @@
-.form__box {
+.signup__box {
     //  position: absolute;
      border: 1.5px solid white;
      background-color: white;
@@ -9,14 +9,14 @@
      top: 15px;
 }
 
-.form__header {   
+.signup__header {   
     padding: 10px 10px;
     font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;  
     border-bottom: 1px solid lightgray;
     padding-bottom: 5px;
 }
 
-.form__header > h2{
+.signup__header > h2{
     color: #1c1e21;
     font-size: 32px;
     line-height: 38px;
@@ -24,7 +24,7 @@
     margin-bottom: 0;
 }
 
-.form__header > p{
+.signup__header > p{
     margin: 3px;
     color: #606770;
     font-size: 15px;

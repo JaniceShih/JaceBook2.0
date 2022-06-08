@@ -1,5 +1,6 @@
 import React from "react";
 import SignupContainer from "../session_form/signup_form_container";
+import CreatePostContainer from '../posts/create_post_container'
 
 const Modal = ({modal, closeModal}) => {
     if (!modal) {
@@ -9,6 +10,9 @@ const Modal = ({modal, closeModal}) => {
     switch (modal.type) {
         case "create_user":
             component = <SignupContainer />
+            break;
+        case "create_post":
+            component = <CreatePostContainer />
             break;
         default:
             return null;
