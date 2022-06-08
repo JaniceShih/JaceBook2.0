@@ -1,4 +1,5 @@
 import React from 'react';
+import PostIndexItem from './posts_index_item'
 
 import { FaUserCircle } from 'react-icons/fa';
 import { MdPhotoLibrary } from 'react-icons/md';
@@ -13,41 +14,52 @@ class PostIndex extends React.Component{
     }
 
     componentDidMount(){
-
+        this.props.fetchPosts();
+        // this.props.fetchComments();
     }
 
- 
-
-
     render(){   
-        const {currentUser} = this.props;      
+        const {currentUser, posts, userId} = this.props;      
        
 
 
         return(            
            <>
-                <div className='post' >
-                    <div className='post__top' >
-                       <FaUserCircle fontSize="4rem"  color='gray'/>
+                <div className='messagesender' >
+                    <div className='messagesender__top' >
+                       <FaUserCircle fontSize="3.5rem"  color='gray'/>
                         
                         <div                        
                             key="openCreatePostModal"
-                            className='post__input'>
+                            className='messagesender__input'>
                             What's on your mind? {currentUser.fname}
                         </div>          
                     </div>     
 
-                    <div className='post__bottom'>                    
-                        <div className='post__option' >
+                    <div className='messagesender__bottom'>                    
+                        <div className='messagesender__option' >
                              <MdPhotoLibrary fontSize="2.5rem" color='green'/>
                             <h3>Photo/Video</h3>
                         </div>
-                        <div className='post__option'>
+                        <div className='messagesender__option'>
                             <GoSmiley fontSize="2.5rem" color='orange'/>
                             <h3>Feeling/Activity</h3>
                         </div>
                     </div>
                 </div>
+
+                
+                {
+                    Object.values(posts).reverse().map(                      
+                        (post,idx)=>                         
+                        <PostIndexItem 
+                            post={post}                         
+                            currentUser={currentUser}                      
+                            userId={userId}
+                            key ={idx}
+                         />                    
+                    )                    
+                }
 
               
             </>
