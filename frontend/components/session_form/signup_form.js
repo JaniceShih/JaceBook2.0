@@ -35,8 +35,8 @@ class SignupFrom extends React.Component {
         const errors = this.props.errors;      
         
         return(
-            <div className="form__box">
-                <div className='form__header'>
+            <div className="signup__box">
+                <div className='signup__header'>
                     <h2>Sign Up</h2>
                     <p>It’s quick and easy.</p>
                 </div>

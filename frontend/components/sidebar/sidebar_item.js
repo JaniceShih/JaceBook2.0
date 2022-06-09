@@ -6,7 +6,7 @@ function SidebarItem({src, Icon, title, currentUser, linkurl, color}) {
   let show = <h4>{title}</h4>   
 
   if(linkurl){
-    show = <Link to={linkurl}><h4>{title}</h4></Link>  
+    show = <a href={linkurl} target="_blank"><h4 className='sidebarrow-title'>{title}</h4></a>  
   }
 
   return (

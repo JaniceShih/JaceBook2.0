@@ -75,17 +75,25 @@ class NavBar extends React.Component {
                 </div>
                 
                 <div  className='navbar__center'>                   
-                    <div className='navbar__option navbar__option--active'> 
-                        <AiFillHome color="#1877f2" fontSize="3rem" />
+                    <div className='navbar__option navbar__option--active'>
+                        <Link to="/"> 
+                            <AiFillHome color="#1877f2" fontSize="3rem" />
+                        </Link>
                     </div>
                     <div className='navbar__option'> 
-                        <FaChartArea  color="#74787e" fontSize="2.6rem"/>
+                        <a href="https://janiceshih.github.io/the-covid-19-tracker/" target="_blank"> 
+                            <FaChartArea  color="#74787e" fontSize="2.6rem"/>
+                        </a>
                     </div> 
                     <div className='navbar__option'> 
-                        <AiOutlineLinkedin  color="#74787e" fontSize="2.8rem"/>
+                        <a href="https://www.linkedin.com/in/hsiu-chuan-shih-466b22236/" target="_blank"> 
+                            <AiOutlineLinkedin  color="#74787e" fontSize="2.8rem"/>
+                        </a>
                     </div> 
                     <div className='navbar__option'> 
-                        <VscGithub  color="#74787e" fontSize="2.8rem"/>
+                        <a href="https://github.com/JaniceShih" target="_blank">
+                            <VscGithub  color="#74787e" fontSize="2.8rem"/>
+                        </a>
                     </div> 
                  
                     <div className='navbar__option navbar--friends'> 

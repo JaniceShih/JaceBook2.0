@@ -20,7 +20,7 @@ function SideBar(props) {
                 <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
             </div>   
 
-            <SidebarItem Icon={FcAreaChart} title='COVID-19 Tracker' currentUser = {currentUser}/> 
+            <SidebarItem Icon={FcAreaChart} title='COVID-19 Tracker' currentUser = {currentUser} linkurl ='https://janiceshih.github.io/the-covid-19-tracker'/> 
 
             <SidebarItem Icon={FcConferenceCall} title='Friends' currentUser = {currentUser} />
 
