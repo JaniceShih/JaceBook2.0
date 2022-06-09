@@ -4,6 +4,7 @@ import SignupContainer from "../session_form/signup_form_container";
 import CreatePostContainer from '../posts/create_post_container'
 import EditPostContainer from '../posts/edit_post_container'
 import DeletePostContainer from '../posts/delete_post_container'
+import DeleteCommentContainer from '../comments/delete_comment_container'
 
 const Modal = ({modal, closeModal}) => {
     if (!modal) {
@@ -22,6 +23,9 @@ const Modal = ({modal, closeModal}) => {
             break;
         case "delete_post":
             component = <DeletePostContainer post={modal.post} />
+            break;
+        case "delete_comment":
+            component = <DeleteCommentContainer comment={modal.comment} />
             break;
         default:
             return null;

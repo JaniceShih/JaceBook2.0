@@ -1,9 +1,16 @@
 import React from 'react'
 
+import CommentsContainer from '../comments/comments_index_container'
+
 import { FaUserCircle } from 'react-icons/fa';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 import { MdOutlineModeEditOutline } from 'react-icons/md';
 import { IoTrashOutline } from "react-icons/io5";
+import { AiOutlineLike } from "react-icons/ai";
+import { AiFillLike } from "react-icons/ai";
+
+import { BiComment } from "react-icons/bi";
+import { FaRegCommentAlt } from "react-icons/fa";
 
 
 class PostIndexItem extends React.Component{
@@ -14,21 +21,46 @@ class PostIndexItem extends React.Component{
     }
     this.openDeletePostModal = this.openDeletePostModal.bind(this);
     this.openEditPostModal = this.openEditPostModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleCreateLike = this.handleCreateLike.bind(this);
+    this.handleDeleteLike = this.handleDeleteLike.bind(this);
 
   }
 
-  openEditPostModal(e){
+   openDeletePostModal(e) {
+      e.preventDefault();
+      this.props.openModal({ type: 'delete_post', post: this.props.post });
+   } 
+  
+   openEditPostModal(e){
     e.preventDefault();
     this.props.openModal({ type: 'edit_post', post: this.props.post });
    }
-
-  openDeletePostModal(e) {
-    e.preventDefault();
-    this.props.openModal({ type: 'delete_post', post: this.props.post });
- } 
+  
+   handleClick(id){   
+  
+    const element = document.getElementById('comments__input'+id);
+    console.log(element);
+    element.focus();
+   }
+  
+   handleCreateLike(e){
+      e.preventDefault();
+      const like = {like_id: this.props.post.id, like_type: "Post", user_id: this.props.currentUser.id};
+      this.props.createLike(like);
+      this.props.fetchPosts();
+   }
+  
+   handleDeleteLike(likeId){
+     return (e)=>{
+      this.props.deleteLike(likeId);
+      this.props.fetchPosts();
+     }
+  
+  }
 
   render(){
-      const {currentUser, post, userId} = this.props; 
+    const {currentUser, post, userId} = this.props; 
 
       if ((typeof userId !== "undefined") && userId!==post.user_id){
         return null;
@@ -39,6 +71,18 @@ class PostIndexItem extends React.Component{
       if(post.user_id === currentUser.id){
         post__menu = <p className="post__menu"><MdOutlineMoreHoriz fontSize="2.5rem" /> </p>;
       }
+
+      const commentsCount = post.comments.length;
+      const likesCount = post.likes.length;
+
+      let likeId = 0;
+      let likesThumbup = "";
+      post.likes.map(liker=> {
+        if (liker.user_id === currentUser.id) {
+          likesThumbup= "jacebook__color--active"
+          likeId=liker.id
+        }  
+      })
       
 
       return (
@@ -66,8 +110,7 @@ class PostIndexItem extends React.Component{
                       onClick={this.openDeletePostModal}>
                     <IoTrashOutline  fontSize="2.5rem" />
                     <button className="post__option-button"> Delete Post </button> 
-                  </div>
-                
+                  </div>                
                 </div>      
                                 
             </div>
@@ -82,7 +125,51 @@ class PostIndexItem extends React.Component{
           <div className="post__image">
             <img src={post.photoUrl} />
           </div>
-  
+
+
+          <div  className='post__likeComment'>    
+            
+              <div className='post__option--like'>
+                {
+                  (likesCount > 0 ) ? 
+                    <p>
+                        <AiFillLike fontSize='2.2rem' className='like-circle'/> {likesCount}
+                    </p>
+                    : ''   
+                }
+              </div>
+              <div className='post__option--comment' >
+                {
+                  (commentsCount > 0)? 
+                
+                        <p> 
+                          {commentsCount} Comments
+                        </p>
+                    
+                    : ''   
+                } 
+              </div>   
+          </div>
+
+          <div className='post__options'>
+            <div className={`post__option ` + likesThumbup} onClick={(likesThumbup === '') ? this.handleCreateLike : this.handleDeleteLike(likeId) }>
+                {
+                  (likesThumbup === '') ?  <AiOutlineLike fontSize='2.3rem'/> :  <AiFillLike fontSize='2.3rem' className={likesThumbup}/>
+                }
+               
+                <p > 
+                <button >Like</button>  
+                </p>
+            </div>  
+            <div className='post__option' onClick={()=>this.handleClick(post.id)}>
+                <FaRegCommentAlt fontSize='1.8rem' />
+                <p >  Comment </p>
+            </div>  
+          </div>
+
+          <div id="CommentsContainer" className='post__comments'>
+            <CommentsContainer post={post} currentUser={currentUser}/>
+          </div> 
     
         </div>
       )

@@ -192,14 +192,14 @@
     padding-bottom: 10px;
 }
 
-.from__submit{
+.form__submit{
     flex: 1;
     display: flex;
     align-items: center;
     justify-content:flex-end;  
 }
 
-.from__submit__delete > button{
+.form__submit__delete > button{
     margin-right: 10px;
     text-align: center;
     padding: 0 25px;
@@ -207,7 +207,7 @@
     font-weight: 300;
 }
 
-.from__submit__delete--cancel{
+.form__submit__delete--cancel{
     background-color: white;
     color: #2e81f4;
     margin-right: 10px;
@@ -217,12 +217,12 @@
     text-transform: capitalize;
 }
 
-.from__submit__delete--cancel:hover{
+.form__submit__delete--cancel:hover{
     background: #eff0f0;
     border-radius: 6px;
 }
 
-.from__submit__delete{
+.form__submit__delete{
     font-size: 1.4rem;
     font-weight: 600;
     padding: 10px 15px;

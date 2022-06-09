@@ -28,7 +28,7 @@ class PostIndex extends React.Component{
     }
 
     render(){   
-        const {currentUser, posts, userId, openModal} = this.props;   
+        const {currentUser, posts, openModal, user,fetchPosts, createLike, deleteLike, userId} = this.props;  
         return(            
            <>
                 <div className='messagesender' >
@@ -62,9 +62,12 @@ class PostIndex extends React.Component{
                         (post,idx)=>                         
                         <PostIndexItem 
                             post={post} 
-                            openModal ={openModal}                        
-                            currentUser={currentUser}                      
-                            userId={userId}
+                            openModal ={openModal}  
+                            currentUser={currentUser}
+                            userId={userId}                           
+                            fetchPosts={fetchPosts}
+                            createLike={createLike}
+                            deleteLike={deleteLike}
                             key ={idx}
                          />                    
                     )                    

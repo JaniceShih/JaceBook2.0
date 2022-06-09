@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { deletePost } from '../../actions/post_actions';
+import { deleteComment } from '../../actions/comment_actions';
+import {fetchPosts} from  '../../actions/post_actions';
 import { closeModal } from "../../actions/modal_actions";
 
 
-class DeltePost extends React.Component {
+class DelteComment extends React.Component {
 
   componentDidMount() {
     // this.props.fetchPost(this.props.match.params.postId);
@@ -13,10 +14,13 @@ class DeltePost extends React.Component {
   
 
   render() {
-    const {post, deletePost, closeModal} = this.props;
+    const {comment, deleteComment, closeModal} = this.props;
 
     return (
-        <div className='form__box'>   
+
+
+
+      <div className='form__box'>   
           <div className="form__header">
               <div className="form__header--delete"> Delete? </div>               
           </div>
@@ -33,7 +37,11 @@ class DeltePost extends React.Component {
                     </button>                         
                     <button 
                         className="btn btn--primary form__submit__delete" 
-                        onClick={() => deletePost(post.id).then(() => this.props.closeModal())} > 
+                        onClick={() => deleteComment(comment.id).then(() => {
+                          this.props.closeModal()
+                          this.props.fetchPosts();
+                          }
+                      )} > 
                         Delete
                     </button>  
                 </div>
@@ -46,12 +54,13 @@ class DeltePost extends React.Component {
 }
 
 const mSTP = state =>({
-    post: state.ui.modal.post
+    comment: state.ui.modal.comment
 })
 
 const mDTP = dispatch =>({
     closeModal: () => dispatch(closeModal()),
-    deletePost: (postId)=> dispatch(deletePost(postId))
+    fetchPosts: ()=>dispatch(fetchPosts()),
+    deleteComment: (commentId)=> dispatch(deleteComment(commentId))
 })
 
-export default connect(mSTP, mDTP)(DeltePost);
+export default connect(mSTP, mDTP)(DelteComment);
