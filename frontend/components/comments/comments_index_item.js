@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Avatar } from '@mui/material'
-
+import { FaUserCircle } from 'react-icons/fa';
 import { AiFillLike } from "react-icons/ai";
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 
@@ -81,8 +80,8 @@ class CommentIndexItem extends React.Component{
             comment__menu = <p className="comments__menu"> <MdOutlineMoreHoriz fontSize="1.8rem" />  </p>;
         }
 
-        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
-        /> 
+        let userImag =   <FaUserCircle fontSize="3.3rem"  color='gray'/>
+       
         if(currentUser.photoUrl){
             userImag =  <img src={comment.photoUrl} className="avatar avatar--medium"/>           
         }
@@ -128,7 +127,7 @@ class CommentIndexItem extends React.Component{
         }else{
             comment_body = 
                 <div  className="comments__item" >
-                    <Avatar src={comment.photoUrl}/>                     
+                     <FaUserCircle fontSize="3.3rem"  color='gray'/>                   
                     <div className ="comments__body">
                         <div  className='comments__body__top'>
                             <h3>{comment.fname +' ' + comment.lname}</h3>

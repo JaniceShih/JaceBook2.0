@@ -1,8 +1,7 @@
 import React from 'react';
-import { Avatar } from '@mui/material'
 
 import CommentIndexItem from './comments_index_item';
-
+import { FaUserCircle } from 'react-icons/fa';
    
 class   CommentIndex extends React.Component{
     constructor(props){
@@ -49,8 +48,8 @@ class   CommentIndex extends React.Component{
     render(){ 
         const {currentUser, post, deleteComment, fetchPosts, updateComment,openModal, createLike,deleteLike} = this.props;
         
-        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
-        /> 
+        let userImag =   <FaUserCircle fontSize="3.3rem"  color='gray'/>
+    
         if(currentUser.photoUrl){
             userImag =  <img src={currentUser.photoUrl} className="avatar avatar--small"/>           
         }
