@@ -10,6 +10,10 @@ class User < ApplicationRecord
     has_many :posts,
         foreign_key: :user_id,
         class_name: :Post
+
+    has_many :commenters, dependent: :destroy,
+        foreign_key: :user_id,
+        class_name: :Comment
     
     def self.generate_session_token
         SecureRandom::urlsafe_base64
