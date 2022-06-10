@@ -106,7 +106,7 @@ class PostForm extends React.Component {
         null;
 
     const {currentUser} = this.props;
-    let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="38" round={true} />
+    let userImag =  <Avatar name={`${currentUser.fname}`} size="38" round={true} />
     
     if(currentUser.photoUrl){
         userImag =   <Avatar src={`${currentUser.photoUrl}`} size="38" round={true} />            

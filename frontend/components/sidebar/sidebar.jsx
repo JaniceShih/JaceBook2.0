@@ -10,7 +10,7 @@ import { FaFacebookMessenger } from 'react-icons/fa';
 function SideBar(props) {
     const {currentUser} = props;
 
-    let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="30" round={true} />
+    let userImag =  <Avatar name={`${currentUser.fname}`} size="30" round={true} />
         
     if(currentUser.photoUrl){
         userImag =   <Avatar src={`${currentUser.photoUrl}`} size="30" round={true} />            

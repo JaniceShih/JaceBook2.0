@@ -31,7 +31,7 @@ class PostIndex extends React.Component{
     render(){   
         const {currentUser, posts, openModal, user,fetchPosts, createLike, deleteLike, userId} = this.props;  
 
-        let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="40" round={true} />
+        let userImag =  <Avatar name={`${currentUser.fname}`} size="40" round={true} />
         
         if(currentUser.photoUrl){
             userImag =   <Avatar src={`${currentUser.photoUrl}`} size="40" round={true} />            

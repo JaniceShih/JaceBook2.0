@@ -55,13 +55,13 @@ class NavBar extends React.Component {
         const {currentUser} = this.props;
       
 
-        let userImag =  <Avatar name={`${currentUser.fname} ${currentUser.lname}`} size="35" round={true} />
+        let userImag =  <Avatar name={`${currentUser.fname}`} size="35" round={true} />
         
         if(currentUser.photoUrl){
             userImag =   <Avatar src={`${currentUser.photoUrl}`} size="35" round={true} />            
         }
 
-        let userImag_profile =  <Avatar name={`${currentUser.fname} ${currentUser.lname}`} size="50" round={true} />
+        let userImag_profile =  <Avatar name={`${currentUser.fname}`} size="50" round={true} />
         
         if(currentUser.photoUrl){
             userImag_profile =   <Avatar src={`${currentUser.photoUrl}`} size="50" round={true} />            

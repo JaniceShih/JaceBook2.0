@@ -38,7 +38,7 @@ class Profile extends React.Component{
         if (!user){
             return null  
         }else{
-             userImag =  <Avatar name={`${user.fname}  ${user.lname}`} size="178" round={true} />
+             userImag =  <Avatar name={`${user.fname}`} size="178" round={true} />
         
              if(user.photoUrl){
                 userImag =   <Avatar src={`${user.photoUrl}`} size="178" round={true} />            

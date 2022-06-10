@@ -49,7 +49,7 @@ class   CommentIndex extends React.Component{
     render(){ 
         const {currentUser, post, deleteComment, fetchPosts, updateComment,openModal, createLike,deleteLike} = this.props;
         
-        let userImag =  <Avatar name={`${currentUser.fname} ${currentUser.lname}`} size="33" round={true} />
+        let userImag =  <Avatar name={`${currentUser.fname}`} size="33" round={true} />
         
         if(currentUser.photoUrl){
             userImag =   <Avatar src={`${currentUser.photoUrl}`} size="33" round={true} />            
