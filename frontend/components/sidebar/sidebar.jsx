@@ -1,7 +1,8 @@
 import React from 'react'
 import SidebarItem from './sidebar_item'
 
-import { FaUserCircle } from 'react-icons/fa';
+// import {  } from 'react-icons/fa';
+import Avatar from 'react-avatar';
 import { FcAreaChart } from "react-icons/fc";
 import { FcConferenceCall } from "react-icons/fc";
 import { FaFacebookMessenger } from 'react-icons/fa';
@@ -9,7 +10,11 @@ import { FaFacebookMessenger } from 'react-icons/fa';
 function SideBar(props) {
     const {currentUser} = props;
 
-    let userImag =  <FaUserCircle fontSize="3rem"/> ;
+    let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="30" round={true} />
+        
+    if(currentUser.photoUrl){
+        userImag =   <Avatar src={`${currentUser.photoUrl}`} size="30" round={true} />            
+    }
    
 
     return (

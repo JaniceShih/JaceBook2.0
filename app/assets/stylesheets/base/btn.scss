@@ -31,6 +31,15 @@
     background: #399d25;
   }
 
+  .btn--gray {
+    background: #E4E6EB;
+    color: black;
+  }
+  
+  .btn--gray:hover {
+    background: #d4d7e0;
+  }
+
   .btn--outline {
     background: #fff;
     color: var(--color-headings);

@@ -6,19 +6,21 @@ import FeedIndex from "./feed/feed_index"
 import BookMarks from "./bookmarks/bookmarks"
 import LoginFormContainer from "./session_form/login_form_container"
 import NotFoundContainer from './NotFound.jsx';
+import ProfileContainer from "./profile/profile_container";
 
 const App = () => {
     return(
         <> 
           <ModalContainer /> 
           <Switch>
+             <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
             <ProtectedRoute exact path="/bookmarks" component={BookMarks}/>  
             <ProtectedRoute exact path="/" component={FeedIndex}/>
           
             <AuthRoute path="/login" component={LoginFormContainer}/>    
             <Route component={NotFoundContainer} />
           </Switch>
-            
+         
         </>
     );
 };

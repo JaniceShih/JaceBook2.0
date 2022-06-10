@@ -51,6 +51,7 @@
     font-weight: 00;
     font-size: 1.5rem;
     color: var(--color-body-darker);
+    text-transform: capitalize;
 }
 
 .sidebarrow > a{
@@ -209,8 +210,8 @@
 
 
 .story__avatar--white{
-    border: 5px solid white;
-
+    border: 6px solid white;
+    border-radius: 50%;
 }
 
 

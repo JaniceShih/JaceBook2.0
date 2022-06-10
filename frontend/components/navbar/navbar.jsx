@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { MdSearch} from "react-icons/md";
 import { FaUserCircle } from 'react-icons/fa';
+import Avatar from 'react-avatar';
 import { AiFillHome } from "react-icons/ai";
 import { MdStorefront } from "react-icons/md";
 import { FaChartArea } from 'react-icons/fa';
@@ -39,15 +40,27 @@ class NavBar extends React.Component {
     };
 
     
-    redirectPage(){         
-        this.props.history.push({pathname: '/bookmarks'});
+    redirectPage(url){         
+        this.props.history.push({pathname: url});
     }
     
     render() {
-        console.log( this.props.url);
+        // console.log( this.props.url);
 
         const {currentUser} = this.props;
-        let userImag =  "";
+      
+
+        let userImag =  <Avatar name={`${currentUser.fname} ${currentUser.lname}`} size="35" round={true} />
+        
+        if(currentUser.photoUrl){
+            userImag =   <Avatar src={`${currentUser.photoUrl}`} size="35" round={true} />            
+        }
+
+        let userImag_profile =  <Avatar name={`${currentUser.fname} ${currentUser.lname}`} size="50" round={true} />
+        
+        if(currentUser.photoUrl){
+            userImag_profile =   <Avatar src={`${currentUser.photoUrl}`} size="50" round={true} />            
+        }
 
         let nav__menu = this.state.dropdown;
         let avatar = this.state.avatar;
@@ -68,17 +81,17 @@ class NavBar extends React.Component {
                         <input type="text" placeholder='Search JaceBook' className='navbar__search'/>
                        
                     </div>
-                    <div className='navbar--bookmark--small' onClick={()=>this.redirectPage()}>
+                    <div className='navbar--bookmark--small' onClick={()=>this.redirectPage('/bookmarks')}>
                         <CgMenu  color="#74787e" fontSize="3rem" />
                     </div>
                     
                 </div>
                 
                 <div  className='navbar__center'>                   
-                    <div className='navbar__option navbar__option--active'>
-                        <Link to="/"> 
+                    <div className='navbar__option navbar__option--active' onClick={()=>this.redirectPage('/')}>
+                       
                             <AiFillHome color="#1877f2" fontSize="3rem" />
-                        </Link>
+                       
                     </div>
                     <div className='navbar__option'> 
                         <a href="https://janiceshih.github.io/the-covid-19-tracker/" target="_blank"> 
@@ -100,7 +113,7 @@ class NavBar extends React.Component {
                         <FaUserFriends  color="#74787e" fontSize="2.8rem"/>
                     </div> 
 
-                    <div className='navbar__option navbar--bookmark' onClick={()=>this.redirectPage()}> 
+                    <div className='navbar__option navbar--bookmark' onClick={()=>this.redirectPage('/bookmarks')}> 
                         {/* <Link to='/bookmarks'><CgMenu  color="#74787e" fontSize="3rem"/></Link> */}
                         <CgMenu  color="#74787e" fontSize="3rem"/>
                     </div> 
@@ -111,8 +124,10 @@ class NavBar extends React.Component {
 
                 <div  className='navbar__right'>
                     <div className="navbar__info">
-                        <div className="navbar__info--user"> 
-                                <div className="navbar__info--userimg"><FaUserCircle fontSize="3rem" /></div>
+                        <div className="navbar__info--user" onClick={()=>this.redirectPage(`/users/${currentUser.id}`)}> 
+                                <div className="navbar__info--userimg">
+                                     {userImag}
+                                </div>
                                 <div className="navbar__info--username">{currentUser.fname}</div>                                
                         </div>
           
@@ -139,9 +154,11 @@ class NavBar extends React.Component {
                            
 
                             <div className={`nav__menu ${nav__menu}`}>
-                                <div className='nav__menu--option'>
+                                <div className='nav__menu--option' onClick={()=>this.redirectPage(`/users/${currentUser.id}`)}>
                                 
-                                    <div className="navbar__info--userimg"><FaUserCircle fontSize="5rem" /></div>
+                                    <div className="navbar__info--userimg">
+                                        {userImag_profile}
+                                    </div>
                                     <div className="navbar__info--username">
                                         <p>
                                             {currentUser.fname} {currentUser.lname}
@@ -150,7 +167,7 @@ class NavBar extends React.Component {
                                            See your profile
                                         </p>
                                     </div>
-
+                                
                                 </div>
 
                                 <hr className='navbar__info-hr'></hr>

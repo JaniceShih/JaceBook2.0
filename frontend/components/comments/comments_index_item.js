@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { FaUserCircle } from 'react-icons/fa';
+// import { FaUserCircle } from 'react-icons/fa';
+import Avatar from 'react-avatar';
 import { AiFillLike } from "react-icons/ai";
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 
@@ -80,10 +81,10 @@ class CommentIndexItem extends React.Component{
             comment__menu = <p className="comments__menu"> <MdOutlineMoreHoriz fontSize="1.8rem" />  </p>;
         }
 
-        let userImag =   <FaUserCircle fontSize="3.3rem"  color='gray'/>
-       
+        let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="33" round={true} />
+        
         if(currentUser.photoUrl){
-            userImag =  <img src={comment.photoUrl} className="avatar avatar--medium"/>           
+            userImag =   <Avatar src={`${currentUser.photoUrl}`} size="33" round={true} />            
         }
 
         // const likesCount = comment.likes.length;
@@ -127,7 +128,7 @@ class CommentIndexItem extends React.Component{
         }else{
             comment_body = 
                 <div  className="comments__item" >
-                     <FaUserCircle fontSize="3.3rem"  color='gray'/>                   
+                     {userImag}               
                     <div className ="comments__body">
                         <div  className='comments__body__top'>
                             <h3>{comment.fname +' ' + comment.lname}</h3>

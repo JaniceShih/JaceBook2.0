@@ -1,7 +1,8 @@
 import React from 'react';
 import PostIndexItem from './posts_index_item'
 
-import { FaUserCircle } from 'react-icons/fa';
+// import { FaUserCircle } from 'react-icons/fa';
+import Avatar from 'react-avatar';
 import { MdPhotoLibrary } from 'react-icons/md';
 import { GoSmiley } from "react-icons/go";
 
@@ -29,11 +30,17 @@ class PostIndex extends React.Component{
 
     render(){   
         const {currentUser, posts, openModal, user,fetchPosts, createLike, deleteLike, userId} = this.props;  
+
+        let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="40" round={true} />
+        
+        if(currentUser.photoUrl){
+            userImag =   <Avatar src={`${currentUser.photoUrl}`} size="40" round={true} />            
+        }
         return(            
            <>
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                       <FaUserCircle fontSize="3.8rem"  color='gray'/>
+                       {userImag}
                         
                         <div                        
                             key="openCreatePostModal"

@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+// import { FaUserCircle } from 'react-icons/fa';
+import Avatar from 'react-avatar';
+
 import { MdLibraryAdd } from 'react-icons/md';
 import { MdEdit } from 'react-icons/md';
 
@@ -107,6 +109,13 @@ class PostForm extends React.Component {
         </>:        
         null;
 
+    const {currentUser} = this.props;
+    let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="38" round={true} />
+    
+    if(currentUser.photoUrl){
+        userImag =   <Avatar src={`${currentUser.photoUrl}`} size="38" round={true} />            
+    }
+
     return (
       <div className='form__box'>   
           <div className="form__header">
@@ -116,7 +125,7 @@ class PostForm extends React.Component {
             
           <form className="form__post">
               <div  className="form__avatar">
-                  <FaUserCircle fontSize="3.5rem"  color='gray'/>
+                  {userImag}
                   <p className='user-name'> {this.props.currentUser.fname} {this.props.currentUser.lname}</p>
               </div>
               <div className='form__input' >

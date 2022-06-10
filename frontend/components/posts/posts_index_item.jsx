@@ -2,7 +2,8 @@ import React from 'react'
 
 import CommentsContainer from '../comments/comments_index_container'
 
-import { FaUserCircle } from 'react-icons/fa';
+// import { FaUserCircle } from 'react-icons/fa';
+import Avatar from 'react-avatar';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 import { MdOutlineModeEditOutline } from 'react-icons/md';
 import { IoTrashOutline } from "react-icons/io5";
@@ -83,13 +84,19 @@ class PostIndexItem extends React.Component{
           likeId=liker.id
         }  
       })
+
+      let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="40" round={true} />
+        
+      if(currentUser.photoUrl){
+          userImag =   <Avatar src={`${currentUser.photoUrl}`} size="40" round={true} />            
+      }
       
 
       return (
         <div className='post'>
           <div className='post__top'>
             <div className='post__top--left'>
-               <FaUserCircle fontSize="3.8rem"  color='gray'/>
+               {userImag}
               <div className='post__topinfo'>
                 <h3>{post.fname + ' ' + post.lname}</h3>
                 <p>{post.updated_at.toString().split('T')[0]}</p>            
@@ -133,7 +140,7 @@ class PostIndexItem extends React.Component{
                 {
                   (likesCount > 0 ) ? 
                     <p>
-                        <AiFillLike fontSize='2.2rem' className='like-circle'/> {likesCount}
+                        <AiFillLike fontSize='1.8rem' className='like-circle'/> {likesCount}
                     </p>
                     : ''   
                 }
@@ -154,7 +161,7 @@ class PostIndexItem extends React.Component{
           <div className='post__options'>
             <div className={`post__option ` + likesThumbup} onClick={(likesThumbup === '') ? this.handleCreateLike : this.handleDeleteLike(likeId) }>
                 {
-                  (likesThumbup === '') ?  <AiOutlineLike fontSize='2.3rem'/> :  <AiFillLike fontSize='2.3rem' className={likesThumbup}/>
+                  (likesThumbup === '') ?  <AiOutlineLike fontSize='1.8rem'/> :  <AiFillLike fontSize='2.3rem' className={likesThumbup}/>
                 }
                
                 <p > 
@@ -162,7 +169,7 @@ class PostIndexItem extends React.Component{
                 </p>
             </div>  
             <div className='post__option' onClick={()=>this.handleClick(post.id)}>
-                <FaRegCommentAlt fontSize='1.8rem' />
+                <FaRegCommentAlt fontSize='1.6rem' />
                 <p >  Comment </p>
             </div>  
           </div>

@@ -22,7 +22,7 @@ class DelteComment extends React.Component {
 
       <div className='form__box'>   
           <div className="form__header">
-              <div className="form__header--delete"> Delete? </div>               
+              <div className="form__header--delete"> Delete Comment? </div>               
           </div>
           <div onClick={closeModal} className="close-x x-background">X</div> 
 
@@ -33,7 +33,7 @@ class DelteComment extends React.Component {
                     <button 
                         className="btn  btn--gray form__submit__delete--cancel" 
                         onClick={closeModal} > 
-                        Cancel
+                        No
                     </button>                         
                     <button 
                         className="btn btn--primary form__submit__delete" 
