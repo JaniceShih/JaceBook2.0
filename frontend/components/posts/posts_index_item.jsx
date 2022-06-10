@@ -87,7 +87,7 @@ class PostIndexItem extends React.Component{
 
       let userImag =  <Avatar name={`${post.fname}  ${post.lname}`} size="40" round={true} />
         
-      if(post.photoUrl){
+      if(post.user_photoUrl){
           userImag =   <Avatar src={`${post.user_photoUrl}`} size="40" round={true} />            
       }
       

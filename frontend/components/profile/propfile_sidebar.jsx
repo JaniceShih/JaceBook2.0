@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom';
 // import FriendList from "../friends/friend_list"
-// import PhotoList from "../photos/photo_list"
+import PhotoList from "../photos/photo_list"
 
 class ProfileSidebar extends React.Component{
     constructor(props){
@@ -51,11 +51,11 @@ class ProfileSidebar extends React.Component{
         const {user, posts} = this.props;
         // let freinds = [...user.followers, ...user.following];
 
-        // const photos = [];
-        // Object.values(posts).map(post => {       
-        //      if(post.user_id === user.id) 
-        //         {photos.push(post.photoUrl)} 
-        //     })
+        const photos = [];
+        Object.values(posts).map(post => {       
+             if(post.user_id === user.id && post.photoUrl) 
+                {photos.push(post.photoUrl)} 
+            })
         
         const bio = this.state.bio
         let user_bio = 
@@ -101,7 +101,7 @@ class ProfileSidebar extends React.Component{
                        
                     </div>
                 </div>
-                {/* <div className='profile__sidebar--info'>
+                <div className='profile__sidebar--info'>
                     <div className='profile__intro' >
                         
                         <div className='intro__header'>
@@ -126,7 +126,7 @@ class ProfileSidebar extends React.Component{
                         </div>  
                                             
                     </div>
-                </div> */}
+                </div>
 
                 {/* <div className='profile__sidebar--info profile__fix'>
                     <div className='profile__intro' >

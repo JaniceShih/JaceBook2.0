@@ -3,6 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import NavBarContainer from "../navbar/navbar_container";
 import PostIndexContainer from "../posts/posts_index_container"
 import ProfileSidebar from "./propfile_sidebar"
+import PhotosContainer from "./photos_container"
 
 import Avatar from 'react-avatar';
 import { MdEdit } from 'react-icons/md';
@@ -61,6 +62,20 @@ class Profile extends React.Component{
                <ProfileSidebar user={user} posts={posts} updateUser={updateUser} />
         }
 
+        let postactive = "";
+        let friendsactive = "";
+        let photosactive = "";
+        switch(tagName){
+            case 'friends':
+                friendsactive = "navbar__option--active";
+                break
+            case 'photos':
+                photosactive = "navbar__option--active";
+                break
+            default:
+                postactive = "navbar__option--active";
+        }
+
         return (
             <>
                 <NavBarContainer />
@@ -93,14 +108,14 @@ class Profile extends React.Component{
 
                         </div>
                         <div  className='profile__navbar'>                    
-                                <div className={`profile__option `}>    
-                                    Posts
+                                <div className={`profile__option   ${postactive}`}>    
+                                    <Link to={`/users/${currentUser.id}`}> Posts </Link>
                                 </div>                       
-                                <div className={`profile__option `}> 
-                                Friends
+                                <div className={`profile__option  ${friendsactive}`}> 
+                                    Friends
                                 </div>                         
-                                <div className={`profile__option `}> 
-                                    Photos 
+                                <div className={`profile__option ${photosactive}`}> 
+                                    <Link to={`/users/${currentUser.id}/photos`}> Photos </Link> 
                                 </div>                           
                         </div>
                     </div>
@@ -114,9 +129,9 @@ class Profile extends React.Component{
                             <div className='profile__posts'>
                                 <Switch>                             
                                     {/* <Route path="/users/:userId/friends" 
-                                        component={FriendsContainer }/>
+                                        component={FriendsContainer }/> */}
                                     <Route path="/users/:userId/photos" 
-                                        component={PhotosContainer} /> */}
+                                        component={PhotosContainer} />
                                     <Route path="/users/:userId" 
                                         component={PostIndexContainer} />
                                 </Switch>
