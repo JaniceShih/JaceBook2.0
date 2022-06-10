@@ -27,8 +27,9 @@ function Friends(props) {
               </div>
           </div>
         </div>
-
-{/* 
+        
+        <h3>Contacts</h3>
+     
         {
             currentUser.followers.map(
               (friend, idx)=> <FriendList  friend = {friend} key={idx}/>)
@@ -37,7 +38,8 @@ function Friends(props) {
         {
           currentUser.following.map(
             (friend, idx)=> <FriendList  friend = {friend} key={idx}/>)
-        } */}
+        }
+        
 
     </div>
   )

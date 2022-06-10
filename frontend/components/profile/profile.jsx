@@ -4,6 +4,7 @@ import NavBarContainer from "../navbar/navbar_container";
 import PostIndexContainer from "../posts/posts_index_container"
 import ProfileSidebar from "./propfile_sidebar"
 import PhotosContainer from "./photos_container"
+import FriendsContainer from "./friends_container"
 
 import Avatar from 'react-avatar';
 import { MdEdit } from 'react-icons/md';
@@ -76,6 +77,8 @@ class Profile extends React.Component{
                 postactive = "navbar__option--active";
         }
 
+        const freinds = [...user.followers, ...user.following];
+
         return (
             <>
                 <NavBarContainer />
@@ -96,7 +99,7 @@ class Profile extends React.Component{
                                             {user.fname} {user.lname}                                     
                                     </div>
                                     <div>
-                                        <p> 0 friends </p>
+                                        <p> {freinds.length} friends </p>
                                     </div>
                                 </div>
                                 <div className='profile__userinfo--edit'>
@@ -112,7 +115,7 @@ class Profile extends React.Component{
                                     <Link to={`/users/${currentUser.id}`}> Posts </Link>
                                 </div>                       
                                 <div className={`profile__option  ${friendsactive}`}> 
-                                    Friends
+                                    <Link to={`/users/${currentUser.id}/friends`}>Friends </Link> 
                                 </div>                         
                                 <div className={`profile__option ${photosactive}`}> 
                                     <Link to={`/users/${currentUser.id}/photos`}> Photos </Link> 
@@ -128,8 +131,8 @@ class Profile extends React.Component{
 
                             <div className='profile__posts'>
                                 <Switch>                             
-                                    {/* <Route path="/users/:userId/friends" 
-                                        component={FriendsContainer }/> */}
+                                    <Route path="/users/:userId/friends" 
+                                        component={FriendsContainer }/>
                                     <Route path="/users/:userId/photos" 
                                         component={PhotosContainer} />
                                     <Route path="/users/:userId" 

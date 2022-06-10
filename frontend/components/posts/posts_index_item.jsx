@@ -61,11 +61,14 @@ class PostIndexItem extends React.Component{
   }
 
   render(){
-    const {currentUser, post, userId} = this.props; 
+    const {currentUser, post, userId, friendIds} = this.props; 
 
       if ((typeof userId !== "undefined") && userId!==post.user_id){
         return null;
       }
+      if(!friendIds.includes(post.user_id)) {
+        return null;
+    } 
 
       let post__menu = '';
 
@@ -85,7 +88,7 @@ class PostIndexItem extends React.Component{
         }  
       })
 
-      let userImag =  <Avatar name={`${post.fname}  ${post.lname}`} size="40" round={true} />
+      let userImag =  <Avatar name={`${post.fname}`} size="40" round={true} />
         
       if(post.user_photoUrl){
           userImag =   <Avatar src={`${post.user_photoUrl}`} size="40" round={true} />            

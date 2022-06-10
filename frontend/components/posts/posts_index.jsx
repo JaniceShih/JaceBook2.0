@@ -30,6 +30,11 @@ class PostIndex extends React.Component{
 
     render(){   
         const {currentUser, posts, openModal, user,fetchPosts, createLike, deleteLike, userId} = this.props;  
+        const friendIds = [currentUser.id];
+        Object.values(currentUser.followers).map(
+            friend=> friendIds.push(friend.id));
+        Object.values(currentUser.following).map(
+            friend=> friendIds.push(friend.id));
 
         let userImag =  <Avatar name={`${currentUser.fname}`} size="40" round={true} />
         
@@ -71,7 +76,8 @@ class PostIndex extends React.Component{
                             post={post} 
                             openModal ={openModal}  
                             currentUser={currentUser}
-                            userId={userId}                           
+                            userId={userId}    
+                            friendIds = {friendIds}                       
                             fetchPosts={fetchPosts}
                             createLike={createLike}
                             deleteLike={deleteLike}

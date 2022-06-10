@@ -1,7 +1,7 @@
 import React from 'react'
 import SidebarItem from './sidebar_item'
 
-// import {  } from 'react-icons/fa';
+
 import Avatar from 'react-avatar';
 import { FcAreaChart } from "react-icons/fc";
 import { FcConferenceCall } from "react-icons/fc";

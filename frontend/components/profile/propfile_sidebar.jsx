@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom';
-// import FriendList from "../friends/friend_list"
+import FriendList from "../friends/friend_list"
 import PhotoList from "../photos/photo_list"
 
 class ProfileSidebar extends React.Component{
@@ -49,7 +49,7 @@ class ProfileSidebar extends React.Component{
     render(){
 
         const {user, posts} = this.props;
-        // let freinds = [...user.followers, ...user.following];
+        let freinds = [...user.followers, ...user.following];
 
         const photos = [];
         Object.values(posts).map(post => {       
@@ -128,7 +128,7 @@ class ProfileSidebar extends React.Component{
                     </div>
                 </div>
 
-                {/* <div className='profile__sidebar--info profile__fix'>
+                <div className='profile__sidebar--info profile__fix'>
                     <div className='profile__intro' >
                         
                         <div >
@@ -160,7 +160,7 @@ class ProfileSidebar extends React.Component{
                         </div>  
                                             
                     </div>
-                </div> */}
+                </div> 
           
              </div>
 

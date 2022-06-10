@@ -7,6 +7,23 @@ class User < ApplicationRecord
 
     has_one_attached :photo
 
+    has_many :followed_user,
+        foreign_key: :user_id,
+        class_name: :Friend
+
+    has_many :followers,
+        through: :followed_user,
+        source: :friend
+
+
+    has_many :following_user,
+        foreign_key: :friend_id,
+        class_name: :Friend
+
+    has_many :following,
+        through: :following_user,
+        source: :user
+
     has_many :posts,
         foreign_key: :user_id,
         class_name: :Post
