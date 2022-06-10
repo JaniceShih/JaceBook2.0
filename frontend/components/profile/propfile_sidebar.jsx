@@ -60,7 +60,7 @@ class ProfileSidebar extends React.Component{
         const bio = this.state.bio
         let user_bio = 
                 <p className='intro__p'>
-                    {bio}
+                    {(bio) ? bio : `Hi there 👋`}
                 </p>;
         if (this.state.editstatus === 'edit'){
             user_bio =                            
