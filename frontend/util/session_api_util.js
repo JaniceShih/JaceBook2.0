@@ -29,3 +29,17 @@ export const login = user => (
       url: `/api/users/${userId}`
     })
   };
+
+  
+  export const updateUser = formData => {
+    // console.log(formData.get('user[photo]'));
+    return $.ajax({
+      method: 'PATCH',
+      url: `/api/users/${parseInt(formData.get('user[id]'))}`,
+      method: 'PATCH',
+      data: formData,
+      contentType: false,
+      processData: false
+    })
+  };
+  

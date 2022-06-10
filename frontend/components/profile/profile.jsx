@@ -6,6 +6,8 @@ import ProfileSidebar from "./propfile_sidebar"
 
 import Avatar from 'react-avatar';
 import { MdEdit } from 'react-icons/md';
+import { MdPersonAddAlt1 } from 'react-icons/md';
+
 
 class Profile extends React.Component{
 
@@ -27,12 +29,12 @@ class Profile extends React.Component{
 
     
     render(){
-        const {user, url, posts, updateUser} = this.props;
+        const {currentUser, user, url, posts, updateUser} = this.props;
 
         const params = url.split("/");
         const tagName = params[params.length -1];
         let userImag =''
-
+        let profileButton =''
         if (!user){
             return null  
         }else{
@@ -40,6 +42,16 @@ class Profile extends React.Component{
         
              if(user.photoUrl){
                 userImag =   <Avatar src={`${user.photoUrl}`} size="178" round={true} />            
+            }
+            profileButton = <>
+                   <button className="btn--primary btn--profile" onClick={this.openEditProfileModal}> 
+                    <MdPersonAddAlt1 fontSize="2.3rem"/> Add Friend
+                    </button></>
+            if(user==currentUser){
+                profileButton = <>
+                    <button className="btn--gray btn--profile" onClick={this.openEditProfileModal}> 
+                    <MdEdit fontSize="2.3rem"/> Edit profile
+                    </button></>
             }
         }
 
@@ -65,19 +77,18 @@ class Profile extends React.Component{
                                 </div>
                                 <div className='profile__avatar'></div>
                                 <div  className='profile__userinfo'>
-                                    <div >
-                                        {user.fname} {user.lname}
+                                    <div className='profile__userinfo-h1'>
+                                            {user.fname} {user.lname}                                     
                                     </div>
                                     <div>
-                                        <p> Friends </p>
+                                        <p> 0 friends </p>
                                     </div>
                                 </div>
                                 <div className='profile__userinfo--edit'>
                                 
-                                    <button className="btn--gray btn--profile" onClick={this.openEditProfileModal}> 
-                                        <MdEdit fontSize="2.3rem"/> Edit profile
-                                    </button>
-
+                                 
+                                        {profileButton}
+                              
                                 </div>
 
                         </div>

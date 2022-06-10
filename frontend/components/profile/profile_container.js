@@ -6,7 +6,7 @@ import {updateUser, fetchUser} from '../../actions/session_actions';
 
 
 const mSTP = (state, ownProps) => ({
-    // currentUser: state.entities.users[state.session.currentUser],
+    currentUser: state.entities.users[state.session.currentUser],
     // users: state.entities.users,
     // sessionId: state.session.id,
     user: state.entities.users[ownProps.match.params.userId],

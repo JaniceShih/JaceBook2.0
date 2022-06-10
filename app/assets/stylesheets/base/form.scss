@@ -6,7 +6,8 @@
     //  min-height: 430px;
      width: 500px;
      border-radius: 10px;
-      top: 15px;          
+      top: 15px;   
+    // z-index: 9999;       
 }
 
 .form__header {
@@ -60,6 +61,7 @@
 .form__post{
     padding: 10px 15px 5px;
 }
+
 
 .form__file{
     border: 1px solid darkgrey;   
