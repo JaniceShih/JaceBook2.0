@@ -261,6 +261,7 @@
 
 .intro__header > p{
     padding: 0px 10px;
+    font-size: 1.5rem;
 }
 
 .intro__input{       
@@ -362,6 +363,13 @@
     color: #747577;
 }
 
+.intro__heading{
+    color: rgb(45, 45, 45);
+    font-size: large;
+    font-weight: 600;
+    padding: 10px 10px;
+}
+
  @media screen and (min-width: 1031px) {
     .profile__navbar{
         max-width: 1031px;
@@ -432,12 +440,7 @@
         margin-left: 10px;
     }
 
-    .intro__heading{
-        color: rgb(45, 45, 45);
-        font-size: large;
-        font-weight: 600;
-        padding: 10px 10px;
-    }
+  
 
 
     .profile__sidebar--friends{
