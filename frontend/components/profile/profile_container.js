@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 // import { fetchUser, fetchUsers } from '../../actions/user_actions';
 import Profile from './profile';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import {updateUser, fetchUser} from '../../actions/session_actions';
 
 
@@ -19,7 +19,8 @@ const mSTP = (state, ownProps) => ({
 const mDTP = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),  
     updateUser: (user) => dispatch(updateUser(user)),
-    fetchUser: (userId) => dispatch(fetchUser(userId))
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    
 })
 
 export default connect(mSTP, mDTP)(Profile);

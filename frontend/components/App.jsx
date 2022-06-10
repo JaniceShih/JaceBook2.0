@@ -13,7 +13,7 @@ const App = () => {
         <> 
           <ModalContainer /> 
           <Switch>
-             <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+            <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
             <ProtectedRoute exact path="/bookmarks" component={BookMarks}/>  
             <ProtectedRoute exact path="/" component={FeedIndex}/>
           

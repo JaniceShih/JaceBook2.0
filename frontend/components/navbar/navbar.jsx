@@ -43,6 +43,11 @@ class NavBar extends React.Component {
     redirectPage(url){         
         this.props.history.push({pathname: url});
     }
+
+    componentDidMount(){
+             this.props.closeModal();
+    }
+
     
     render() {
         // console.log( this.props.url);

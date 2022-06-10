@@ -81,10 +81,10 @@ class CommentIndexItem extends React.Component{
             comment__menu = <p className="comments__menu"> <MdOutlineMoreHoriz fontSize="1.8rem" />  </p>;
         }
 
-        let userImag =  <Avatar name={`${currentUser.fname}  ${currentUser.lname}`} size="33" round={true} />
+        let userImag =  <Avatar name={`${comment.fname}  ${comment.lname}`} size="33" round={true} />
         
-        if(currentUser.photoUrl){
-            userImag =   <Avatar src={`${currentUser.photoUrl}`} size="33" round={true} />            
+        if(comment.photoUrl){
+            userImag =   <Avatar src={`${comment.photoUrl}`} size="33" round={true} />            
         }
 
         // const likesCount = comment.likes.length;

@@ -334,15 +334,16 @@
 .form__profile{
     font-weight: 600;
     font-size: 1.7rem;
-    margin: 0 5px;
+    // margin: 0 5px;
+    padding-top: 3px;
 }
 
 .profile-field{
     width: 450px;
     font-size: 1.5rem;
-    padding: 6px 10px;
+    padding: 4px 10px;
     font-weight: 400;
-    margin: 8px 0;
+    margin: 5px 0;
     color: #747577;
 }
 

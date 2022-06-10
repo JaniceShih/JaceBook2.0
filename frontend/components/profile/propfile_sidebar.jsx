@@ -38,13 +38,13 @@ class ProfileSidebar extends React.Component{
 
     
 
-    // update(field){
-    //     return e =>(
-    //       this.setState({
-    //         [field]: e.currentTarget.value
-    //       })    
-    //     )      
-    // }
+    update(field){
+        return e =>(
+          this.setState({
+            [field]: e.currentTarget.value
+          })    
+        )      
+    }
 
     render(){
 
@@ -94,7 +94,7 @@ class ProfileSidebar extends React.Component{
                              <button 
                                 className='intro__input' 
                                 onClick={this.updateEditStatus}>
-                                 Edit Bio
+                                    {(bio === null || bio === "") ? ` Add Bio` : `Edit Bio `}
                               </button>                                       
                         </div>   
 

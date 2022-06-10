@@ -78,10 +78,6 @@ class PostForm extends React.Component {
     )      
   }
   
-
-  componentWillUnmount() {
-    this.props.closeModal();
-  }
   
   render() {   
     console.log(this.state.photoUrl);

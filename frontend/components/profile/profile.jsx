@@ -44,7 +44,7 @@ class Profile extends React.Component{
                 userImag =   <Avatar src={`${user.photoUrl}`} size="178" round={true} />            
             }
             profileButton = <>
-                   <button className="btn--primary btn--profile" onClick={this.openEditProfileModal}> 
+                   <button className="btn--primary btn--profile"> 
                     <MdPersonAddAlt1 fontSize="2.3rem"/> Add Friend
                     </button></>
             if(user==currentUser){

@@ -47,6 +47,7 @@ class ProfileForm extends React.Component {
         this.props.closeModal()
     }
 
+
     
 
     render(){

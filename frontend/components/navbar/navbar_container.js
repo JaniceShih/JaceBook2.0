@@ -4,7 +4,7 @@ import {withRouter} from "react-router-dom"
 import NavBar from "./navbar";
 
 import {logout} from "../../actions/session_actions" 
-
+import { closeModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => {
     return {
@@ -16,7 +16,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = (dispatch) => {
     return ({
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        closeModal: () => dispatch(closeModal())
     });
 };
 
