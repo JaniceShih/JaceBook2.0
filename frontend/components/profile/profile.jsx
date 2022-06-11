@@ -39,6 +39,10 @@ class Profile extends React.Component{
         this.props.fetchUser(this.props.userId);
     }
     
+    friendRequestDelete(requestId){
+        this.props.deleteFriend(requestId);
+        this.props.fetchUser(this.props.userId);
+    }
 
     componentDidMount(){
         // console.log(this.props.userId);
@@ -81,8 +85,7 @@ class Profile extends React.Component{
                 for(let i=0; i < freinds.length; i++){
                     
                     if(freinds[i].id === currentUser.id && freinds[i].status[0].status === 'Friends'){
-                        console.log("Friends");
-                        console.log(freinds[i]);
+                       
                         profileButton = <>
                             <button className="btn--primary btn--profile" > 
                                     <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
@@ -91,11 +94,10 @@ class Profile extends React.Component{
                     }
 
                     if(freinds[i].id=== currentUser.id && freinds[i].status[0].status === 'Pendding'){
-                        console.log("Pendding");
-                        console.log(freinds[i]);
+                     
                         profileButton = <>
-                            <button className="btn--primary btn--profile" > 
-                                    <BsPersonXFill fontSize="2.3rem"/> Cancel Request
+                            <button className="btn--primary btn--profile" onClick={()=>this.friendRequestDelete(freinds[i].status[0].id)}> 
+                                    <BsPersonXFill fontSize="2.3rem" /> Cancel Request
                             </button></> 
                         
                     }

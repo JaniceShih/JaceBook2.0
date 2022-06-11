@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import {updateUser, fetchUser} from '../../actions/session_actions';
-import {createFriend, fetchFriends, updateFriend} from '../../actions/friend_actions';
+import {createFriend, fetchFriends, updateFriend, deleteFriend} from '../../actions/friend_actions';
 
 
 const mSTP = (state, ownProps) => ({
@@ -25,6 +25,7 @@ const mDTP = dispatch => ({
     createFriend: (userId) => dispatch(createFriend(userId)),
     fetchFriends: (userId) => dispatch(fetchFriends(userId)),
     updateFriend: (userId) => dispatch(updateFriend(userId)),
+    deleteFriend: (userId) => dispatch(deleteFriend(userId)),
 })
 
 export default connect(mSTP, mDTP)(Profile);
