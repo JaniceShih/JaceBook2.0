@@ -21,6 +21,7 @@
     height: 185px;
     background-color: white;
     border-radius: 15px;
+    
     // box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
 }
 
@@ -37,6 +38,7 @@
     border-radius: 10px;
     margin: 0px 0px;
     border: 1px solid #ccd0d5;
+    cursor: pointer;
 }
 
 
@@ -77,6 +79,7 @@
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
+    cursor: pointer;
 }
 
 .friendcol{
@@ -90,6 +93,7 @@
     background-color: white;
     border-radius: 15px;
     // box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
+    cursor: pointer;
 }
 
 
@@ -113,13 +117,15 @@
     font-size: medium;
     // margin: 10px 10px;
     color: black;
+    padding-left: 10px;
+    cursor: pointer;
 
 }
 
 .friendcol > .friendrow__info > p {
     font-weight: 500;
-    font-size: x-small;
-   
+    font-size: 1.3rem;
+    padding-top: 3px;
     color: black;
     text-align: left;
 

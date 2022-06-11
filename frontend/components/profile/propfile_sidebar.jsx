@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom';
-import FriendList from "../friends/friend_list"
+import FriendList from "./friend_list"
 import PhotoList from "../photos/photo_list"
 
 class ProfileSidebar extends React.Component{
@@ -150,8 +150,10 @@ class ProfileSidebar extends React.Component{
                                 freinds.slice(0, 8).map(
                                     (friend,idx) => 
                                         <FriendList 
-                                            friend={friend} 
+                                            friend={friend}                                             
                                             flexdirection='friendcol'
+                                            history={this.props.history}
+                                            fetchUser={this.props.fetchUser}
                                             key={idx}
                                         />) 
                                 }   

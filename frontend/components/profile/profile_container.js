@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => ({
     userId: parseInt(ownProps.match.params.userId),
     url: ownProps.location.pathname,
     posts: state.entities.posts,
+    history: ownProps.history
 })
 
 const mDTP = dispatch => ({

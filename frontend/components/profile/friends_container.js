@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import FriendList from "../friends/friend_list"
-
+import FriendList from "./friend_list"
+import { fetchUser} from '../../actions/session_actions';
+import {withRouter} from "react-router-dom"
 
 class Friends extends React.Component {
   render() {
@@ -21,6 +22,8 @@ class Friends extends React.Component {
                               freinds.map((friend,idx) => 
                                             <FriendList friend = {friend} 
                                                   flexdirection = 'friendrow'
+                                                  fetchUser={this.props.fetchUser}
+                                                  history={this.props.history}
                                                   key = {idx}
                                             />
                                           ) 
@@ -35,12 +38,16 @@ class Friends extends React.Component {
 
 const mSTP = (state, ownProps) =>{
   return {
-    user: state.entities.users[ownProps.match.params.userId]
+    user: state.entities.users[ownProps.match.params.userId],
+    history: ownProps.history
   };
 };
 
 const mDTP = dispatch =>({
-    
+  fetchUser: (userId) => dispatch(fetchUser(userId))
 })
 
-export default connect(mSTP, mDTP)(Friends);
+// export default connect(mSTP, mDTP)(Friends);
+
+const FriendsContainer = connect(mSTP, mDTP)(Friends);
+export default withRouter(FriendsContainer);

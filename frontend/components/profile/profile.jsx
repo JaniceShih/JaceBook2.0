@@ -9,6 +9,7 @@ import FriendsContainer from "./friends_container"
 import Avatar from 'react-avatar';
 import { MdEdit } from 'react-icons/md';
 import { MdPersonAddAlt1 } from 'react-icons/md';
+import { BsFillPersonCheckFill } from 'react-icons/bs';
 
 
 class Profile extends React.Component{
@@ -25,14 +26,16 @@ class Profile extends React.Component{
     
 
     componentDidMount(){
+        // console.log(this.props.userId);
         this.props.fetchUser(this.props.userId);
        
     }
 
-    
+      
     render(){
-        const {currentUser, user, url, posts, updateUser} = this.props;
-
+        // debugger
+        const {currentUser, user, url, posts, history, updateUser, fetchUser} = this.props;
+        let freinds = [];
         const params = url.split("/");
         const tagName = params[params.length -1];
         let userImag =''
@@ -45,6 +48,8 @@ class Profile extends React.Component{
              if(user.photoUrl){
                 userImag =   <Avatar src={`${user.photoUrl}`} size="178" round={true} />            
             }
+
+            freinds = [...user.followers, ...user.following];
             profileButton = <>
                    <button className="btn--primary btn--profile"> 
                     <MdPersonAddAlt1 fontSize="2.3rem"/> Add Friend
@@ -54,13 +59,33 @@ class Profile extends React.Component{
                     <button className="btn--gray btn--profile" onClick={this.openEditProfileModal}> 
                     <MdEdit fontSize="2.3rem"/> Edit profile
                     </button></>
+            }else{
+                for(let i=0; i < freinds.length; i++){
+                    console.log(freinds[i].id);
+                    if(freinds[i].id===currentUser.id){
+                        profileButton = <>
+                            <button className="btn--gray btn--profile"> 
+                                    <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
+                            </button></> 
+                        
+                    }
+                }
+
             }
+            
+            
+            // if(freinds.includes(user.id)){
+            //     profileButton = <>
+            //     <button className="btn--gray btn--profile" onClick={this.openEditProfileModal}> 
+            //      Friend
+            //     </button></>
+            // }
         }
 
         let profile__sidebar = '';
         if(tagName !== 'friends' && tagName !== 'photos'){  
             profile__sidebar = 
-               <ProfileSidebar user={user} posts={posts} updateUser={updateUser} />
+               <ProfileSidebar user={user} posts={posts} history={history} updateUser={updateUser} fetchUser={fetchUser}/>
         }
 
         let postactive = "";
@@ -77,7 +102,8 @@ class Profile extends React.Component{
                 postactive = "navbar__option--active";
         }
 
-        const freinds = [...user.followers, ...user.following];
+       
+     
 
         return (
             <>
