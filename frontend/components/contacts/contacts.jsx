@@ -1,10 +1,10 @@
 import React from 'react'
-import FriendList from './friends_list'
+import FriendList from './contacts_list'
 
-function Friends(props) {
+function Contacts(props) {
   const {currentUser} = props;
   return (
-    <div className='friendslist'>
+    <div className='contactslist'>
         <div className='ads'>
           <h3>Sponsored</h3>
           <div  className='ad'>
@@ -45,4 +45,4 @@ function Friends(props) {
   )
 }
 
-export default Friends
+export default Contacts

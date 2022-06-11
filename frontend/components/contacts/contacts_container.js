@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Friends from "./freinds";
+import Contacts from "./contacts.jsx";
 
 
 const mstp = (state) => {
@@ -17,5 +17,5 @@ const mdtp = (dispatch) => {
 };
 
 
-export default connect(mstp, mdtp)(Friends);
+export default connect(mstp, mdtp)(Contacts);
 

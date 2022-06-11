@@ -4,7 +4,7 @@ import SidebarItem from './sidebar_item'
 
 import Avatar from 'react-avatar';
 import { FcAreaChart } from "react-icons/fc";
-import { FcConferenceCall } from "react-icons/fc";
+import { FaUserFriends } from 'react-icons/fa';
 import { FaFacebookMessenger } from 'react-icons/fa';
 
 function SideBar(props) {
@@ -26,9 +26,9 @@ function SideBar(props) {
             </div>   
 
             <SidebarItem Icon={FcAreaChart} title='COVID-19 Tracker' currentUser = {currentUser} linkurl ='https://janiceshih.github.io/the-covid-19-tracker'/> 
-
-            <SidebarItem Icon={FcConferenceCall} title='Friends' currentUser = {currentUser} />
-
+            
+            <SidebarItem Icon={FaUserFriends} title='Friends' currentUser = {currentUser} color="#fff" classname="user-friends" />
+     
             <SidebarItem Icon={FaFacebookMessenger} title='Messenger' currentUser = {currentUser} color ="#1877f2"/>   
             
 

@@ -2,7 +2,7 @@ import React from "react";
 
 import NavBarContainer from "../navbar/navbar_container";
 import SidebarContainer from './../sidebar/sidebar_container'
-import FriendsContainer from  './../friends/friends_container'
+import ContactContainer from  './../contacts/contacts_container'
 import StoryReel from '../feed/storyreel'
 import PostIndexContainer from "../posts/posts_index_container"
 
@@ -16,7 +16,7 @@ const FeedIndex = () => {
                     <StoryReel /> 
                     <PostIndexContainer />              
                 </div>
-                <FriendsContainer />              
+                <ContactContainer />              
           </div> 
         </>
     )

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link} from 'react-router-dom';
 
-function SidebarItem({src, Icon, title, currentUser, linkurl, color}) {
+function SidebarItem({src, Icon, title, currentUser, linkurl, color, classname}) {
   let show = <h4>{title}</h4>   
 
   if(linkurl){
@@ -11,7 +11,7 @@ function SidebarItem({src, Icon, title, currentUser, linkurl, color}) {
 
   return (
     <div className='sidebarrow'>           
-        {Icon && <Icon fontSize="3rem" color={color}/>}
+        {Icon && <Icon fontSize="3rem" color={color} className={classname} />}
         {show}
     </div>
   )

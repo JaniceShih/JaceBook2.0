@@ -1,7 +1,7 @@
 import Avatar from 'react-avatar';
 import React from 'react'
 
-function FriendList(props) {
+function ContactLIst(props) {
   const {friend} = props;
   return (
     <div className='sidebarrow'>
@@ -14,4 +14,4 @@ function FriendList(props) {
   )
 }
 
-export default FriendList
+export default ContactLIst

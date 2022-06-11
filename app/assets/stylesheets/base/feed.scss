@@ -59,6 +59,12 @@
     font-weight: 600;
 }
 
+.user-friends{
+    background: linear-gradient(to right, #1877f2 10%, #8cd1c7);
+    padding: 3px;
+    border-radius: 50%;
+}
+
 @media screen and (min-width: 1150px) {
     .app > .sidebar {
       display: flex;
@@ -81,7 +87,7 @@
     width: 100%;       
 }
 
-.friendslist{
+.contactslist{
     display: none;
     padding: 15px 10px;
     flex: 0.4;
@@ -90,7 +96,7 @@
     
 }
 
-.friendslist > h3{
+.contactslist > h3{
     padding-left: 5px;
     color: #87888b;
     font-size: 1.8rem;
@@ -100,7 +106,7 @@
 
 
 @media screen and (min-width: 950px) {
-    .friendslist {
+    .contactslist {
         display: flex;
         flex: 0.33;
         flex-direction: column;
@@ -120,7 +126,7 @@
 
 
 @media screen and (min-width: 1350px) {
-    .friendslist {      
+    .contactslist {      
       width: 380px;
     }
 }
