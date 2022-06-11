@@ -86,6 +86,7 @@ class NavBar extends React.Component {
                         <input type="text" placeholder='Search JaceBook' className='navbar__search'/>
                        
                     </div>
+                    
                     <div className='navbar--bookmark--small' onClick={()=>this.redirectPage('/bookmarks')}>
                         <CgMenu  color="#74787e" fontSize="3rem" />
                     </div>
@@ -141,9 +142,9 @@ class NavBar extends React.Component {
                         </div> 
 
                 
-                        <div className="avatar avatar--medium">
+                        {/* <div className="avatar avatar--medium">
                             <FaFacebookMessenger color="black" fontSize="2rem" />
-                        </div> 
+                        </div>  */}
 
 
 
