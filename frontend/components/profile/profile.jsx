@@ -17,12 +17,25 @@ class Profile extends React.Component{
     constructor(props){
         super(props);
         this.openEditProfileModal = this.openEditProfileModal.bind(this); 
+        this.friendRequest = this.friendRequest.bind(this);
     }
 
     openEditProfileModal(e){
         e.preventDefault();
         this.props.openModal({ type: 'edit_profile', user: this.props.user });
-       }
+    }
+
+    friendRequest(friendId){
+       
+        const friend = {
+            user_id: this.props.currentUser.id,
+            friend_id: friendId,
+            status: 'Pendding'
+        }
+        // console.log(friend);
+        this.props.createFriend(friend);
+        this.props.fetchUser(this.props.userId);
+    }
     
 
     componentDidMount(){
@@ -35,11 +48,12 @@ class Profile extends React.Component{
     render(){
         // debugger
         const {currentUser, user, url, posts, history, updateUser, fetchUser} = this.props;
+        
         let freinds = [];
         const params = url.split("/");
         const tagName = params[params.length -1];
-        let userImag =''
-        let profileButton =''
+        let userImag ='';
+        let profileButton ='';
         if (!user){
             return null  
         }else{
@@ -50,21 +64,24 @@ class Profile extends React.Component{
             }
 
             freinds = [...user.followers, ...user.following];
+            
             profileButton = <>
-                   <button className="btn--primary btn--profile"> 
+                   <button className="btn--primary btn--profile" onClick={()=>this.friendRequest(user.id)}> 
                     <MdPersonAddAlt1 fontSize="2.3rem"/> Add Friend
                     </button></>
-            if(user==currentUser){
+            if(user.id==currentUser.id){
                 profileButton = <>
                     <button className="btn--gray btn--profile" onClick={this.openEditProfileModal}> 
                     <MdEdit fontSize="2.3rem"/> Edit profile
                     </button></>
             }else{
+        
                 for(let i=0; i < freinds.length; i++){
-                    console.log(freinds[i].id);
+                    console.log(freinds[i].status);
                     if(freinds[i].id===currentUser.id){
+                        
                         profileButton = <>
-                            <button className="btn--gray btn--profile"> 
+                            <button className="btn--gray btn--profile" > 
                                     <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
                             </button></> 
                         
