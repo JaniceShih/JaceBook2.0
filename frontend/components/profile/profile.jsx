@@ -10,6 +10,8 @@ import Avatar from 'react-avatar';
 import { MdEdit } from 'react-icons/md';
 import { MdPersonAddAlt1 } from 'react-icons/md';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
+import { BsPersonXFill } from 'react-icons/bs';
+
 
 
 class Profile extends React.Component{
@@ -77,12 +79,23 @@ class Profile extends React.Component{
             }else{
         
                 for(let i=0; i < freinds.length; i++){
-                    console.log(freinds[i].status);
-                    if(freinds[i].id===currentUser.id){
-                        
+                    
+                    if(freinds[i].id === currentUser.id && freinds[i].status[0].status === 'Friends'){
+                        console.log("Friends");
+                        console.log(freinds[i]);
                         profileButton = <>
-                            <button className="btn--gray btn--profile" > 
+                            <button className="btn--primary btn--profile" > 
                                     <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
+                            </button></> 
+                        
+                    }
+
+                    if(freinds[i].id=== currentUser.id && freinds[i].status[0].status === 'Pendding'){
+                        console.log("Pendding");
+                        console.log(freinds[i]);
+                        profileButton = <>
+                            <button className="btn--primary btn--profile" > 
+                                    <BsPersonXFill fontSize="2.3rem"/> Cancel Request
                             </button></> 
                         
                     }
