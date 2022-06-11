@@ -170,13 +170,13 @@ class Profile extends React.Component{
                         </div>
                         <div  className='profile__navbar'>                    
                                 <div className={`profile__option   ${postactive}`}>    
-                                    <Link to={`/users/${currentUser.id}`}> Posts </Link>
+                                    <Link to={`/users/${user.id}`}> Posts </Link>
                                 </div>                       
                                 <div className={`profile__option  ${friendsactive}`}> 
-                                    <Link to={`/users/${currentUser.id}/friends`}>Friends </Link> 
+                                    <Link to={`/users/${user.id}/friends`}>Friends </Link> 
                                 </div>                         
                                 <div className={`profile__option ${photosactive}`}> 
-                                    <Link to={`/users/${currentUser.id}/photos`}> Photos </Link> 
+                                    <Link to={`/users/${user.id}/photos`}> Photos </Link> 
                                 </div>                           
                         </div>
                     </div>
