@@ -4,6 +4,9 @@ import { Link} from 'react-router-dom';
 
 function ContactLIst(props) {
   const {friend} = props;
+  if(friend.status[0].status === "Pendding"){
+    return null;
+  }
   return (
     <Link to={`/users/${friend.id}`}>
     <div className='sidebarrow' >

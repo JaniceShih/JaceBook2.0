@@ -98,11 +98,11 @@ class NavBar extends React.Component {
                         </Link>
                     </div>
 
-                    <div className='navbar__input'>                        
+                    {/* <div className='navbar__input'>                        
                         <MdSearch color="#74787e" fontSize="2rem"/>
                         <input type="text" placeholder='Search JaceBook' className='navbar__search'/>
                        
-                    </div>
+                    </div> */}
                     
                     <div className='navbar--bookmark--small' onClick={()=>this.redirectPage('/bookmarks')}>
                         <CgMenu  color="#74787e" fontSize="3rem" />
@@ -154,9 +154,9 @@ class NavBar extends React.Component {
                                 <div className="navbar__info--username">{currentUser.fname}</div>                                
                         </div>
           
-                        <div className="avatar avatar--medium">
+                        {/* <div className="avatar avatar--medium">
                             <CgMenuGridO color="black" fontSize="2rem" />
-                        </div> 
+                        </div>  */}
 
                 
                         {/* <div className="avatar avatar--medium">
@@ -165,9 +165,9 @@ class NavBar extends React.Component {
 
 
 
-                        <div className={`avatar avatar--medium`}>
+                        {/* <div className={`avatar avatar--medium`}>
                             <MdNotifications color="black" fontSize="2rem"/>
-                        </div> 
+                        </div>  */}
 
               
                         <div className={`nav_dropdown`}>
