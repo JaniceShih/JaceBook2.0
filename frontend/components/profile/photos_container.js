@@ -4,9 +4,9 @@ import { fetchPosts } from '../../actions/post_actions';
 import PhotoList from "../photos/photo_list"
 
 class Photos extends React.Component {
-    componentDidMount(){
-        this.props.fetchPosts();
-    }
+    // componentDidMount(){
+    //     this.props.fetchPosts();
+    // }
 
   render() {
     const {user, posts} = this.props;

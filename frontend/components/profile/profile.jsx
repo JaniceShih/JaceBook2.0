@@ -183,7 +183,7 @@ class Profile extends React.Component{
                                     <Link to={`/users/${user.id}/friends`}>Friends </Link> 
                                 </div>                         
                                 <div className={`profile__option ${photosactive}`}> 
-                                    <Link to={`/users/${currentUser.id}/photos`}> Photos </Link> 
+                                    <Link to={`/users/${user.id}/photos`}> Photos </Link> 
                                 </div>                           
                         </div>
                     </div>
