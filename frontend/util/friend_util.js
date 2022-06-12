@@ -15,15 +15,13 @@ export const deleteFriend = (friendId) => (
     })
 )
 
-export const updateFriend = (formData) => {
+export const updateFriend = (friend) =>{
     return $.ajax({
-        method: 'PATCH',
-        url: `/api/friends/${parseInt(formData.get('friend[id]'))}`,
-        data: formData,
-        contentType: false,
-        processData: false
+      url: `/api/friends/${friend.id}`,
+      method: 'PATCH',
+      data: {friend}
     })
-}
+  }
 
 export const fetchFriends = () => (
     $.ajax({
