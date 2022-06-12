@@ -13,7 +13,7 @@ class PostForm extends React.Component {
       photoFile: null,
       photoUrl: this.props.post.photoUrl,
       user_id: this.props.post.user_id,
-      add_photo: (this.props.formType =='Create post') ? 'add-photo' : 'displayNone',
+      add_photo: (this.props.formType =='Create post' || !this.props.post.photoUrl) ? 'add-photo' : 'displayNone',
       photo_preview: (this.props.post.photoUrl) ? 'photo-preview' : 'displayNone',
     }
      this.handleSubmit = this.handleSubmit.bind(this);
