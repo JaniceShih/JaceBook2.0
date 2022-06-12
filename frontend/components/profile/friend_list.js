@@ -28,14 +28,14 @@ class  FriendList extends React.Component {
 
   render(){
     
-    const {flexdirection, friend, url} = this.props;
+    const {flexdirection, friend, url, user, currentUser} = this.props;
 
   
     const params = url.split("/");
     const tagName = params[params.length -1];
     
     let unfriend = ''
-    if(tagName==='friends'){
+    if(tagName==='friends' && user.id === currentUser.id){
         unfriend = <MdOutlineMoreHoriz fontSize="2.5rem" />
     }
     

@@ -27,6 +27,7 @@ class Friends extends React.Component {
                                                   deleteFriend={this.props.deleteFriend}
                                                   history={this.props.history}
                                                   user={this.props.user}
+                                                  currentUser={this.props.currentUser}
                                                   url = {this.props.url}
                                                   key = {idx}
                                             />
@@ -42,6 +43,7 @@ class Friends extends React.Component {
 
 const mSTP = (state, ownProps) =>{
   return {
+    currentUser: state.entities.users[state.session.currentUser],
     user: state.entities.users[ownProps.match.params.userId],
     history: ownProps.history,
     url: ownProps.location.pathname,
