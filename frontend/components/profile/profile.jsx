@@ -124,7 +124,7 @@ class Profile extends React.Component{
         let profile__sidebar = '';
         if(tagName !== 'friends' && tagName !== 'photos'){  
             profile__sidebar = 
-               <ProfileSidebar user={user} posts={posts} history={history} updateUser={updateUser} fetchUser={fetchUser}/>
+               <ProfileSidebar user={user} posts={posts} history={history} url={url} updateUser={updateUser} fetchUser={fetchUser}/>
         }
 
         let postactive = "";

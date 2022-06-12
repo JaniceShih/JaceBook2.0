@@ -48,7 +48,7 @@ class ProfileSidebar extends React.Component{
 
     render(){
 
-        const {user, posts} = this.props;
+        const {user, posts, url} = this.props;
         let freinds = [...user.followers, ...user.following];
         let freinds_sum = 0;
         for(let i=0; i < freinds.length; i++){
@@ -158,6 +158,7 @@ class ProfileSidebar extends React.Component{
                                             friend={friend}                                             
                                             flexdirection='friendcol'
                                             history={this.props.history}
+                                            url={this.props.url}
                                             fetchUser={this.props.fetchUser}
                                             key={idx}
                                         />) 

@@ -8,13 +8,13 @@ export const createFriend = friend => {
     })
   };
 
-export const deleteFriend = (friendId) => (
-    $.ajax({
+export const deleteFriend = (friendId) => {
+    console.log(deleteFriend);
+    return $.ajax({
         method: 'DELETE',
         url: `/api/friends/${friendId}`
-    })
-)
-
+      })
+    }
 export const updateFriend = (friend) =>{
     return $.ajax({
       url: `/api/friends/${friend.id}`,

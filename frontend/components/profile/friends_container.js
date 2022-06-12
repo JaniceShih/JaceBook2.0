@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import FriendList from "./friend_list"
 import { fetchUser} from '../../actions/session_actions';
 import {withRouter} from "react-router-dom"
+import {deleteFriend} from '../../actions/friend_actions';
 
 class Friends extends React.Component {
   render() {
@@ -23,7 +24,10 @@ class Friends extends React.Component {
                                             <FriendList friend = {friend} 
                                                   flexdirection = 'friendrow'
                                                   fetchUser={this.props.fetchUser}
+                                                  deleteFriend={this.props.deleteFriend}
                                                   history={this.props.history}
+                                                  user={this.props.user}
+                                                  url = {this.props.url}
                                                   key = {idx}
                                             />
                                           ) 
@@ -39,12 +43,14 @@ class Friends extends React.Component {
 const mSTP = (state, ownProps) =>{
   return {
     user: state.entities.users[ownProps.match.params.userId],
-    history: ownProps.history
+    history: ownProps.history,
+    url: ownProps.location.pathname,
   };
 };
 
 const mDTP = dispatch =>({
-  fetchUser: (userId) => dispatch(fetchUser(userId))
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  deleteFriend: (userId) => dispatch(deleteFriend(userId)),
 })
 
 // export default connect(mSTP, mDTP)(Friends);

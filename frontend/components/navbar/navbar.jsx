@@ -73,7 +73,7 @@ class NavBar extends React.Component {
 
         const params = url.split("/");
         const tagName = params[params.length -1];
-        console.log(tagName);
+        
         let homeactive = "";
         let friendsactive = "";
         
