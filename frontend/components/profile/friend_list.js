@@ -26,6 +26,10 @@ class  FriendList extends React.Component {
         userImag =   <Avatar src={`${friend.photoUrl}`} size="100" className='friendrow__img'/>            
     }
 
+
+    if(friend.status[0].status === "Pendding"){
+      return null;
+    }
     return (      
       <div className={flexdirection}  onClick={()=>this.redirectPage(friend.id)}>          
          <div>

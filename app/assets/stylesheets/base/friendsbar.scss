@@ -1,0 +1,128 @@
+.friend-app{
+    background-color: #f1f2f5;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.friends-request{
+    flex: 0.95;
+    width: 732px;
+    padding-left: 400px;
+    padding-top: 25px;
+    font-weight: 600;
+
+}
+  
+.friendbar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    min-height: 100vh;
+    // // flex: 0.33;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-body);
+    background: #fff;
+    padding: 25px 15px;
+
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+.friendbar > h1{
+    color: black;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    // font-weight: 900;
+}
+
+.friendbar__option{
+    color: black;
+    // margin: 10px 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.friendbar__option--active{
+    background: #f1f2f5;
+    border-radius: 6px;
+}
+
+.friendbar__option:hover{
+    background: #f1f2f5;
+    border-radius: 6px;
+}
+
+
+.friendbar__icons{
+    
+    padding: 5px;
+    margin-right: 5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.friendbar__icons--active{
+    padding: 8px;
+    background: var(--color-primary);
+}
+
+.friendbar__icons--default{
+
+    background: #f1f2f5;
+}
+
+.friends-request__header{
+    padding-left: 15px;
+    font-weight: 600;
+    font-size:2rem;
+}
+
+.friends-request__list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0;
+}
+
+.friends-requestcol{
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 15px; 
+    margin-left: 8px; 
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid var(--color-gray);
+    cursor: pointer;
+}
+
+.friendbar__img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.friendbar__info{
+   display: flex;
+   flex-direction: column;
+   font-weight: 600;
+   padding: 10px 10px;
+   width: 100%;
+   font-size: 1.8rem;
+}
+
+.btn--friendbar{  
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    padding: 8px;
+    font-size: 1.5rem;
+    width: 100%;
+    border-radius: 6px;
+    text-transform: none;
+ }

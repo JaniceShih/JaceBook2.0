@@ -9,7 +9,8 @@ import { closeModal } from '../../actions/modal_actions';
 const mstp = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.currentUser],        
-        history: ownProps.history
+        history: ownProps.history,
+        url: ownProps.location.pathname,
     };
 };
 

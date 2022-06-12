@@ -1,6 +1,6 @@
 import React from 'react'
 import SidebarItem from './sidebar_item'
-
+import { Link} from 'react-router-dom';
 
 import Avatar from 'react-avatar';
 import { FcAreaChart } from "react-icons/fc";
@@ -19,17 +19,19 @@ function SideBar(props) {
 
     return (
         <div className='sidebar'>
-            
-            <div className='sidebarrow'>
-                {userImag}
-                <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
-            </div>   
 
-            <SidebarItem Icon={FcAreaChart} title='COVID-19 Tracker' currentUser = {currentUser} linkurl ='https://janiceshih.github.io/the-covid-19-tracker'/> 
+             <Link to={`/users/${currentUser.id}`}>
+                <div className='sidebarrow'>
+                    {userImag}
+                    <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
+                </div>   
+            </Link>
+
+            <SidebarItem Icon={FcAreaChart} title='COVID-19 Tracker' currentUser = {currentUser} linkurl ='https://janiceshih.github.io/the-covid-19-tracker' linktarget="_blank"/> 
             
-            <SidebarItem Icon={FaUserFriends} title='Friends' currentUser = {currentUser} color="#fff" classname="user-friends" />
+            <SidebarItem Icon={FaUserFriends} title='Friends' currentUser = {currentUser} color="#fff" classname="user-friends" linkurl="friends" />
      
-            <SidebarItem Icon={FaFacebookMessenger} title='Messenger' currentUser = {currentUser} color ="#1877f2"/>   
+            {/* <SidebarItem Icon={FaFacebookMessenger} title='Messenger' currentUser = {currentUser} color ="#1877f2"/>    */}
             
 
         </div>

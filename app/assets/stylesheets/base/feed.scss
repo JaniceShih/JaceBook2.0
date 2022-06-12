@@ -17,12 +17,18 @@
     padding: 25px 10px;
     width: 100%;
     position: fixed;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-body);
 }
 
 .app >.sidebar{
     display: none;
     width: auto;
     flex: 0.33;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-body);
 }
 
 

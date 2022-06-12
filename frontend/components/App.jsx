@@ -4,6 +4,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ModalContainer from "./modal/modal_container";
 import FeedIndex from "./feed/feed_index"
 import BookMarks from "./bookmarks/bookmarks"
+import Friends from "./friends/friends_index_container"
 import LoginFormContainer from "./session_form/login_form_container"
 import NotFoundContainer from './NotFound.jsx';
 import ProfileContainer from "./profile/profile_container";
@@ -14,6 +15,7 @@ const App = () => {
           <ModalContainer /> 
           <Switch>
             <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+            <ProtectedRoute exact path="/friends" component={Friends}/> 
             <ProtectedRoute exact path="/bookmarks" component={BookMarks}/>  
             <ProtectedRoute exact path="/" component={FeedIndex}/>
           

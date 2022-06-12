@@ -50,6 +50,11 @@ class ProfileSidebar extends React.Component{
 
         const {user, posts} = this.props;
         let freinds = [...user.followers, ...user.following];
+        let freinds_sum = 0;
+        for(let i=0; i < freinds.length; i++){
+            if(freinds[i].status[0].status === 'Friends')
+                freinds_sum += 1;
+        }
 
         const photos = [];
         Object.values(posts).map(post => {       
@@ -142,7 +147,7 @@ class ProfileSidebar extends React.Component{
                             </div>
 
                             <div className='intro__header'>
-                                <p>{freinds.length} Friends</p>
+                                <p>{freinds_sum} Friends</p>
                             </div>
 
                             <div className='friend__list'>

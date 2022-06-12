@@ -6,7 +6,7 @@ import {withRouter} from "react-router-dom"
 
 class Friends extends React.Component {
   render() {
-    const {user,friendsCount} = this.props;
+    const {user} = this.props;
     const freinds = [...user.followers, ...user.following];
     
     return (

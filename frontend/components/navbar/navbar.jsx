@@ -52,7 +52,7 @@ class NavBar extends React.Component {
     render() {
         // console.log( this.props.url);
 
-        const {currentUser} = this.props;
+        const {currentUser, url} = this.props;
       
 
         let userImag =  <Avatar name={`${currentUser.fname}`} size="35" round={true} />
@@ -70,6 +70,23 @@ class NavBar extends React.Component {
         let nav__menu = this.state.dropdown;
         let avatar = this.state.avatar;
         let icons = this.state.icons;
+
+        const params = url.split("/");
+        const tagName = params[params.length -1];
+        console.log(tagName);
+        let homeactive = "";
+        let friendsactive = "";
+        
+        switch(tagName){
+            case 'friends':
+                friendsactive = "navbar__option--active";
+                break   
+            case '':
+                homeactive = "navbar__option--active";         
+                break
+            default:
+                break 
+        }
 
 
         return (
@@ -94,9 +111,9 @@ class NavBar extends React.Component {
                 </div>
                 
                 <div  className='navbar__center'>                   
-                    <div className='navbar__option navbar__option--active' onClick={()=>this.redirectPage('/')}>
+                    <div className={`navbar__option ${homeactive}`} onClick={()=>this.redirectPage('/')}>
                        
-                            <AiFillHome color="#1877f2" fontSize="3rem" />
+                            <AiFillHome color={(homeactive === "" ? "#74787e": "1877f2")} fontSize="3rem" />
                        
                     </div>
                     <div className='navbar__option'> 
@@ -115,8 +132,8 @@ class NavBar extends React.Component {
                         </a>
                     </div> 
                  
-                    <div className='navbar__option navbar--friends'> 
-                        <FaUserFriends  color="#74787e" fontSize="2.8rem"/>
+                    <div className={`navbar__option ${friendsactive}`}   onClick={()=>this.redirectPage('/friends')}> 
+                        <FaUserFriends  color={(friendsactive === "" ? "#74787e": "1877f2")} fontSize="2.8rem"/>
                     </div> 
 
                     <div className='navbar__option navbar--bookmark' onClick={()=>this.redirectPage('/bookmarks')}> 

@@ -56,6 +56,7 @@ class Profile extends React.Component{
         const {currentUser, user, url, posts, history, updateUser, fetchUser} = this.props;
         
         let freinds = [];
+        let freinds_sum = 0;
         const params = url.split("/");
         const tagName = params[params.length -1];
         let userImag ='';
@@ -70,7 +71,10 @@ class Profile extends React.Component{
             }
 
             freinds = [...user.followers, ...user.following];
-            
+            for(let i=0; i < freinds.length; i++){
+                if(freinds[i].status[0].status === 'Friends')
+                    freinds_sum += 1;
+            }
             profileButton = <>
                    <button className="btn--primary btn--profile" onClick={()=>this.friendRequest(user.id)}> 
                     <MdPersonAddAlt1 fontSize="2.3rem"/> Add Friend
@@ -85,7 +89,7 @@ class Profile extends React.Component{
                 for(let i=0; i < freinds.length; i++){
                     
                     if(freinds[i].id === currentUser.id && freinds[i].status[0].status === 'Friends'){
-                       
+                        
                         profileButton = <>
                             <button className="btn--primary btn--profile" > 
                                     <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
@@ -157,7 +161,7 @@ class Profile extends React.Component{
                                             {user.fname} {user.lname}                                     
                                     </div>
                                     <div>
-                                        <p> {freinds.length} friends </p>
+                                        <p> {freinds_sum} friends </p>
                                     </div>
                                 </div>
                                 <div className='profile__userinfo--edit'>
@@ -176,7 +180,7 @@ class Profile extends React.Component{
                                     <Link to={`/users/${user.id}/friends`}>Friends </Link> 
                                 </div>                         
                                 <div className={`profile__option ${photosactive}`}> 
-                                    <Link to={`/users/${user.id}/photos`}> Photos </Link> 
+                                    <Link to={`/users/${currentUser.id}/photos`}> Photos </Link> 
                                 </div>                           
                         </div>
                     </div>
