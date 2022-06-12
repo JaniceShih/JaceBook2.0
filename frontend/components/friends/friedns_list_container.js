@@ -45,7 +45,7 @@ class FriendsList extends React.Component {
 
   render() {
     const {currentUser} = this.props;
-    const freinds = [...currentUser.followers, ...currentUser.following];
+    const freinds = [...currentUser.following];
     console.log(freinds);
     return (  
         <div >
