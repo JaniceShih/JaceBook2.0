@@ -11,6 +11,7 @@ class FriendsList extends React.Component {
     super(props);
     this.friendRequestDelete = this.friendRequestDelete.bind(this); 
     this.redirectPage = this.redirectPage.bind(this); 
+    this.friendRequestUpdate = this.friendRequestUpdate.bind(this);
   }
 
   redirectPage(friendId){    
@@ -21,6 +22,23 @@ class FriendsList extends React.Component {
 
   friendRequestDelete(requestId){
     this.props.deleteFriend(requestId);
+    this.props.fetchUser(this.props.currentUser.id);
+  }
+
+  friendRequestUpdate(friendRequst){
+       
+    const friend = {
+        id: friendRequst.id,
+        user_id: friendRequst.user_id,
+        friend_id: friendRequst.friend_id,
+        status: 'Friends'
+    }
+    console.log(friend);
+    this.props.updateFriend(friend);
+    this.props.fetchUser(this.props.currentUser.id);
+}
+
+  componentDidMount(){
     this.props.fetchUser(this.props.currentUser.id);
   }
 
@@ -47,7 +65,7 @@ class FriendsList extends React.Component {
                                 {friend.fname} {friend.lname}                               
                               </div>
                               <div className='friendbar__button'>
-                                <button className='btn btn--primary btn--friendbar'>Comfirm</button>
+                                <button className='btn btn--primary btn--friendbar' onClick={()=>this.friendRequestUpdate(friend.status[0])}>Comfirm</button>
                                 <button className='btn btn--gray btn--friendbar' onClick={()=>this.friendRequestDelete(friend.status[0].id)}>Delete</button>
                               </div>
                             </div>

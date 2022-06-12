@@ -87,24 +87,27 @@ class Profile extends React.Component{
             }else{
         
                 for(let i=0; i < freinds.length; i++){
-                    
-                    if(freinds[i].id === currentUser.id && freinds[i].status[0].status === 'Friends'){
-                        
-                        profileButton = <>
-                            <button className="btn--primary btn--profile" > 
-                                    <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
-                            </button></> 
-                        
-                    }
+                    if(freinds[i].status[0]){
 
-                    if(freinds[i].id=== currentUser.id && freinds[i].status[0].status === 'Pendding'){
-                     
-                        profileButton = <>
-                            <button className="btn--primary btn--profile" onClick={()=>this.friendRequestDelete(freinds[i].status[0].id)}> 
-                                    <BsPersonXFill fontSize="2.3rem" /> Cancel Request
-                            </button></> 
-                        
+                        if(freinds[i].id === currentUser.id && freinds[i].status[0].status === 'Friends'){
+                            
+                            profileButton = <>
+                                <button className="btn--primary btn--profile" > 
+                                        <BsFillPersonCheckFill fontSize="2.3rem"/> Friends
+                                </button></> 
+                            
+                        }
+    
+                        if(freinds[i].id=== currentUser.id && freinds[i].status[0].status === 'Pendding'){
+                         
+                            profileButton = <>
+                                <button className="btn--primary btn--profile" onClick={()=>this.friendRequestDelete(freinds[i].status[0].id)}> 
+                                        <BsPersonXFill fontSize="2.3rem" /> Cancel Request
+                                </button></> 
+                            
+                        }
                     }
+                    
                 }
 
             }
