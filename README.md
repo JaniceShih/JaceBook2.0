@@ -1,24 +1,15 @@
-# README
+# Jacebook
+JaceBook is a full stack clone of the popular social media applicatio, single page web application that makes it easy for parents to share baby photos and exchange 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live site: [JaceBook](https://jacebook-app.herokuapp.com/)
 
-Things you may want to cover:
+# Technologies Used
+Languages: Javascript, Ruby, HTML5, CSS3
 
-* Ruby version
+Front-end: React-Redux
 
-* System dependencies
+Back-end: Rails 
 
-* Configuration
+Database: PostgreSQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hosting: Heroku
