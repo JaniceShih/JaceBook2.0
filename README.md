@@ -16,10 +16,10 @@ Hosting: Heroku
 
 
 # Features and Implementation
-# Authentication
+## Authentication
 
-# New Feed
+## New Feed
 
-# Profile
+## Profile
 
-# Friend Request
+## Friend Request
