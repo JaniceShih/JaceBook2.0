@@ -13,3 +13,13 @@ Back-end: Rails
 Database: PostgreSQL
 
 Hosting: Heroku
+
+
+# Features and Implementation
+# Authentication
+
+# New Feed
+
+# Profile
+
+# Friend Request
