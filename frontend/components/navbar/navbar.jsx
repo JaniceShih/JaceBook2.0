@@ -50,7 +50,7 @@ class NavBar extends React.Component {
 
     
     render() {
-        // console.log( this.props.url);
+      
 
         const {currentUser, url} = this.props;
       

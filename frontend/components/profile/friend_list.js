@@ -14,13 +14,13 @@ class  FriendList extends React.Component {
 }
 
   redirectPage(friendId){    
-    // console.log(friendId);     
+    //    
     this.props.history.push({pathname: `/users/${friendId}`});
     this.props.fetchUser(friendId);
   }
 
   friendRequestDelete(requestId){
-    console.log(requestId);
+   
     this.props.deleteFriend(requestId);
     this.props.fetchUser(this.props.user.id);
   }

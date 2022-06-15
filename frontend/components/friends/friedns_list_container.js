@@ -15,7 +15,7 @@ class FriendsList extends React.Component {
   }
 
   redirectPage(friendId){    
-    // console.log(friendId);     
+      
     this.props.history.push({pathname: `/users/${friendId}`});
     this.props.fetchUser(friendId);
   }
@@ -33,7 +33,7 @@ class FriendsList extends React.Component {
         friend_id: friendRequst.friend_id,
         status: 'Friends'
     }
-    console.log(friend);
+  
     this.props.updateFriend(friend);
     this.props.fetchUser(this.props.currentUser.id);
 }
@@ -46,7 +46,7 @@ class FriendsList extends React.Component {
   render() {
     const {currentUser} = this.props;
     const freinds = [...currentUser.following];
-    console.log(freinds);
+    
     return (  
         <div >
               <div className='friends-request__header'>Friend Requests </div>

@@ -1,6 +1,6 @@
 
 export const createFriend = friend => {
-    // debugger
+    
     return $.ajax({
       method: 'POST',
       url: '/api/friends',
@@ -9,7 +9,7 @@ export const createFriend = friend => {
   };
 
 export const deleteFriend = (friendId) => {
-    console.log(deleteFriend);
+  
     return $.ajax({
         method: 'DELETE',
         url: `/api/friends/${friendId}`

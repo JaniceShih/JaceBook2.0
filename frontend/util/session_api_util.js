@@ -32,7 +32,7 @@ export const login = user => (
 
   
   export const updateUser = formData => {
-    // console.log(formData.get('user[photo]'));
+    
     return $.ajax({
       method: 'PATCH',
       url: `/api/users/${parseInt(formData.get('user[id]'))}`,

@@ -41,7 +41,7 @@ class PostIndexItem extends React.Component{
    handleClick(id){   
   
     const element = document.getElementById('comments__input'+id);
-    // console.log(element);
+    //
     element.focus();
    }
   

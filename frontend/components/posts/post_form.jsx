@@ -49,14 +49,14 @@ class PostForm extends React.Component {
   }
 
   handleFile(e) {
-    // console.log("handleFile");
+    
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
     fileReader.onloadend = () => {
       this.setState({photoFile: file, photoUrl: fileReader.result, add_photo: 'displayNone', photo_preview: 'photo-preview'});
     };
-    // console.log(this.state);
+    // 
     if (file) {
       fileReader.readAsDataURL(file);
     }
@@ -80,7 +80,7 @@ class PostForm extends React.Component {
   
   
   render() {   
-    // console.log(this.state.photoUrl);
+  
     const preview = this.state.photoUrl ? 
         <>
           <div className={this.state.photo_preview}> 

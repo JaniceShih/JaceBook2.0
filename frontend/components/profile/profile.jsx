@@ -34,7 +34,7 @@ class Profile extends React.Component{
             friend_id: friendId,
             status: 'Pendding'
         }
-        // console.log(friend);
+        /
         this.props.createFriend(friend);
         this.props.fetchUser(this.props.userId);
     }
@@ -45,14 +45,14 @@ class Profile extends React.Component{
     }
 
     componentDidMount(){
-        // console.log(this.props.userId);
+       
         this.props.fetchUser(this.props.userId);
        
     }
 
       
     render(){
-        // debugger
+        
         const {currentUser, user, url, posts, history, updateUser, fetchUser} = this.props;
         
         let freinds = [];
