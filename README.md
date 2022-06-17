@@ -1,6 +1,6 @@
 # Jacebook
 
-JaceBook is a full stack clone of the popular social media application.
+JaceBook is a full stack clone of the popular social media application. Single page web application that makes it easy for user to share their posts, comments.
 
 Live site: [JaceBook](https://jacebook-app.herokuapp.com/)
 
